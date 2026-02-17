@@ -5,6 +5,9 @@
 ## Mục lục
 
 - [Section 07 - EC2](#section-07)
+- [Section 08 - IAM](#section-08)
+- [Section 09 - S3](#section-09)
+- [Section 10 - ELB & ASG](#section-10)
 
 ## Section 07 
 
