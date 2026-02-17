@@ -12,6 +12,11 @@
     EC2 - Computing
 </p>
 
+<details>
+<summary></summary>
+
+
+
 - EC2 là một service cung cấp tài nguyên server ảo theo nhu cầu.
     - Đa dạng cấu hình, dễ dàng triển khai.
     - Khả năng mở rộng gần như không giới hạn.
@@ -41,3 +46,88 @@
         <p align="center">
             <img src="md_imgs/ec2_lifecycle_str.png" width="250" />
         </p>
+
+
+
+<!-- Thêm nội dung vào trước dòng này -->
+</details>
+
+
+
+
+
+
+
+
+
+## Section 08
+
+<p align="center">
+    Identity and Access Managment (IAM)
+</p>
+
+<details>
+<summary></summary>
+<!-- Thêm nội dung vào sau dòng này -->
+
+
+
+
+<!-- Thêm nội dung vào trước dòng này -->
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Section 09
+
+<p align="center">
+    Simple Storage Service (S3)
+</p>
+
+<details>
+<summary></summary>
+<!-- Thêm nội dung vào sau dòng này -->
+
+
+
+
+<!-- Thêm nội dung vào trước dòng này -->
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Section 10
+
+<p align="center">
+    Load Balancing và Autoscaling
+</p>
+
+<details>
+<summary></summary>
+<!-- Thêm nội dung vào sau dòng này -->
+
+
+
+
+<!-- Thêm nội dung vào trước dòng này -->
+</details>
