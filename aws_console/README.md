@@ -12,6 +12,11 @@
 
 ## Elastic Load Balancer (ELB)
 
+<p align="center">
+    <img src = "elb\elb_new.png" width="500">
+
+</p>
+
 <details>
 <summary>&nbsp;&nbsp;</summary>
 
