@@ -92,6 +92,8 @@
 
 ### ASG -Tạo Group mới
 
+Gồm 7 bước:
+
 <p align="center">
     <img src = "asg\asg_create_step01.png" width="1000">
 
@@ -124,7 +126,7 @@
 <br>
 
 - Ghi chú:
-    - Ngoài ra, muốn tinh chỉnh các thông tin khác vào tùy chọn **`Edit`** trên Console.
+    - Ngoài ra, muốn tinh chỉnh các thông tin khác vào tùy chọn **`Action/Edit`** trên Console.
 
 </details>
 
