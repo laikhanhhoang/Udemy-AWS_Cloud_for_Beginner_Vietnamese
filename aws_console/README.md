@@ -12,12 +12,12 @@
 
 ## Elastic Load Balancer (ELB)
 
-
+<details>
+<summary>&nbsp;&nbsp;</summary>
 
 ### Tạo **Target Group**
 
-<details>
-<summary>&nbsp;&nbsp;</summary>
+
 <p align="center">
     <img src = "elb\elb_create_target_group_step01.png" width="1000">
 
@@ -28,12 +28,10 @@
 - Ghi chú:
     - Port ở đây là port đang mở <strong>của instance</strong></i>
 
-</details>
 
 ### **Console** khi truy cập **ELB**
 
-<details>
-<summary></summary>
+
 
 <p align="center">
     <img src="elb/elb_thaotac.png" width="1000">
@@ -41,13 +39,12 @@
 </p>
 
 
-</details> 
+
 
 
 ### Tạo **ELB**
 
-<details>
-<summary></summary>
+
 
 <p align="center">
     <img src="elb/elb_lb_listener&port.png" width="1000">
