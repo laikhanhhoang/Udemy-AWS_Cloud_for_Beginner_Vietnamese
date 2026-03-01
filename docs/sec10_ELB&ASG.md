@@ -6,6 +6,7 @@
 
 - [Lí thuyết](#lí-thuyết)
 - [Lab](#lab)
+- [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
 ## <div align="center"><strong>LÍ THUYẾT</strong></div>
 <!-- Thêm lí thuyết vào sau dòng này -->
@@ -218,5 +219,14 @@
 
 <!-- Thêm lab vào trước dòng này -->
 </details> 
+
+<br><br><br><br><br>
+
+## <div align="center"><strong>TÀI LIỆU BỔ SUNG</strong></div>
+
+- Nội dung phục vụ lab: [Code](/labs/sec_10)
+- AWS Console liên quan:
+    - [ELB](/aws_console/README.md#elastic-load-balancer-elb)
+    - [ASG](/aws_console/README.md#auto-scaling-groups-asg)
 
 
