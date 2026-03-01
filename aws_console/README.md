@@ -9,10 +9,10 @@
     - [**Console** khi truy cập **ELB**](#console-khi-truy-cập-elb)
     - [Tạo **ELB**](#tạo-elb)
 
-- [Auto Scaling Groups](#auto-scaling-groups)
-    - [Launch Template](#asg---launch-template)
-    - [Tạo group mới](#asg--tạo-group-mới)
-    - [Tinh chỉnh phương pháp scale ASG](#asg---tinh-chỉnh-phương-pháp-scale)
+- [Auto Scaling Groups (ASG)](#auto-scaling-groups)
+    - [**Launch Template**](#asg---launch-template)
+    - [**Tạo** ASG](#asg--tạo-group-mới)
+    - [**Tinh chỉnh phương pháp scale** ASG](#asg---tinh-chỉnh-phương-pháp-scale)
 
 
 ## Elastic Load Balancer (ELB)
