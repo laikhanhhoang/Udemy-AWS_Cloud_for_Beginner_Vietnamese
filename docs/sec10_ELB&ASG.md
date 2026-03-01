@@ -5,10 +5,24 @@
 ## MỤC LỤC
 
 - [Lí thuyết](#lí-thuyết)
+    - [Elastic Load Balancer](#elastic-load-balancer)
+        - "Single point of failure" - Sự ra đời của Load Balancer
+        - Elastic Load Balancing - Định nghĩa
+        - Các thành phần cơ bản của Load Balancer
+        - Các loại Load Balancer
+        - Cách Load Balancer hoạt động
+        - Load Balancer tính phí như thế nào?
+        - Cross zone load balancer
+        - Một số lưu ý về Load Balancer
+
+    - [Auto Scaling Groups](#auto-scaling-groups)
+
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
 ## <div align="center"><strong>LÍ THUYẾT</strong></div>
+
+### Elastic Load Balancer
 <!-- Thêm lí thuyết vào sau dòng này -->
 
 - <details>
@@ -59,7 +73,7 @@
         - **High Security**: nếu kết hợp với các dịch vụ khác như WAF, Security Group.
     - ELB có thể dễ dàng **kết hợp** với đa dạng backend sử dụng EC2, Container, Lambda.
 
-- **Các thành phần cơ bản của Loab Balancer**
+- **Các thành phần cơ bản của Load Balancer**
     - Load Balancer cho phép setting các listener (trên 1 port nào đó vd HTTP:80, HTTPS:443)
     - **Mỗi Listener** cho phép cấu hình **nhiều rule**.
     - Request sau khi đi vào listener, được đánh giá bởi các rule sẽ được forward tới target group phù hợp.
@@ -98,8 +112,16 @@
             → truyền qua mạng. 
             
             Ở phía server, dữ liệu được tháo ngược lại và web server (gunicorn/uwsgi) chuyển HTTP request đã hoàn chỉnh cho Django xử lý ở tầng Application.
+        
+        - Xem kĩ hơn trong mục Kiến thức bổ sung tại [Readme.md](/README.md).
 
         </details>
+
+        <br>
+
+        <p align="center">
+            <img src="docs_imgs\elb_all_kinds.png" width="500" />
+        </p>
     
     <br>
 
@@ -183,7 +205,60 @@
     - Load Balancer là 1 dịch vụ Cross Zone, lưu ý khi **tạo ELB** nhớ **chọn tối đa số zone có thể chọn**. 
     - NếuLoad Balancer được tạo không chọn zone có chứa ec2 instance, khi access sẽ bị lỗi không kết nối được (502 Bad Gateway).
 
+<br><br>
 
+### Auto Scaling Groups 
+
+- **Scaling**
+    - Là việc điều chỉnh cấu hình của các tài nguyên để đáp ứng với nhu cầu workload (số request từ người dung, số lượng công việc phải xử lý,…).
+
+        Có 2 hình thức scale:
+        - Scale Up/Down: Tăng/Giảm cấu hình của resources (vd tăng CPU/Ram cho Server, database, tăng dung lượng ổ cứng,…).
+
+            <p align="center">
+                <img src="docs_imgs\asg_scale_updown.png" width="550" />
+            </p>
+
+        - Scale Out/In: Tăng/giảm số lượng thành phần trong 1 cụm chức năng. (Vd add thêm server vào cụm application, add thêm node vào k8s cluster,…).
+            
+            <p align="center">
+                <img src="docs_imgs\asg_scale_outin.png" width="550" />
+            </p>
+
+- **Auto Scaling Groups**
+    - Có nhiệm vụ **điều chỉnh số lượng của instance** cho **phù hợp với workload**, nhằm:
+        - Tiết kiệm chi phí.
+        - Tự động hóa việc mở rộng & phục hồi sự cố.
+    - ASG sử dụng **Launch Template** để biết được cần phải launch EC2 như thế nào.
+
+- **Launch Configuration and Launch Template**
+    - Mục đích: **Chỉ dẫn Auto Scaling Group** biết được cần phải **launch instance như thế nào**.
+    - Các thông tin có thể định nghĩa trong launch template:
+        - AMI
+        - Instance Type
+        - Keypair (trong trường hợp bạn cần login vào instance sau khi tạo)
+        - Subnet (Thường không chọn mà để Auto Scaling Group quyết định)
+        - Security Group(s)
+        - Volume(s)
+        - Tag(s)
+        - Userdata (script tự động chạy khi instance start)
+        - ...
+    - *Một số thông tin như Instance Type, Subnet, Security Group có thể được overwrite bởi Auto Scaling Group.*
+    - <i> <strong>Launch Template thường được sử dụng hơn</strong> bởi nó có thể quản lý được version.</i>
+
+- **Các phương pháp scale hệ thống**
+
+    |Phương pháp|Đặc điểm|
+    |-----------|--------|
+    |**No** Scale|**Duy trì cố định 1 số lượng instances** (nếu instance die thì tạo con mới để bổ sung, ngoài ra không làm gì cả).|
+    |**Manually** Scaling|**Điều chỉnh 3 thông số: min/max/desire** để quyết định số lượng instance trong ASG.|
+    |**Dynamic** Scaling|**Scale tự động** dựa trên việc **monitor các thông số**. <br> <ul><li> **Target tracking scaling**: Monitor **thông số ngay trên chính cluster**, vd CPU, Memory, Network in-out. </li> <li>**Step scaling**: Điều chỉnh số lượng instance (tăng/giảm) **dựa trên 1 tập hợp các alarm** (có thể đến từ các resource khác không phải bản thân cluster). </li><li> **Simple scaling**: **Tương tự Step scaling** tuy nhiên **có apply “cool down period”**.</li></ul>|
+    |**Schedule** Scaling|**Đặt lịch tự động tăng giảm số instance theo thời gian**, phù hợp với các **hệ thống có workload tăng vào 1 thời điểm cố định trong ngày**.|
+    |**Predict Scaling**| **AWS đưa ra dự đoán** dựa vào việc học **từ thông số hằng ngày, hằng tuần để điều chỉnh** số lượng instance một cách tự động. <br> Độ **chính xác** phụ thuộc vào **thời gian application đã vận hành** và **tính ổn định của traffic** đi vào hệ thống.|
+
+
+
+            
 
 
 
