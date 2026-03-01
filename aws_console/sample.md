@@ -3,7 +3,6 @@
 ## Tên <strong>Dịch vụ</strong>
 
 
-<div style="padding-left: 20px;"> <!--Thụt vào một khoảng với mọi nội dung của thao tác-->
 
 ### Thao tác
 
@@ -23,4 +22,3 @@
 
 </details>
 
-</div> <!-- Kết thúc thao tác-->

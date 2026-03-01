@@ -13,7 +13,6 @@
 ## Elastic Load Balancer (ELB)
 
 
-<div style="padding-left: 20px;">
 
 ### Tạo **Target Group**
 
@@ -62,7 +61,6 @@
 
 </details>
 
-</div>
 
 
 
