@@ -13,7 +13,7 @@
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
-    <img src = "elb\elb_new.png" width="500">
+    <img src = "elb\elb_new.png" width="800">
 
 </p>
 
