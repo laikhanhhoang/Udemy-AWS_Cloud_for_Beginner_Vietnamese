@@ -3,3 +3,4 @@ materials/
 *.pem
 
 begin_vie_credentials.csv
+aws_beginner_vie.pem

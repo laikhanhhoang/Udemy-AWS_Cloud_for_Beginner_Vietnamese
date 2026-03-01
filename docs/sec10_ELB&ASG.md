@@ -178,6 +178,9 @@
         - Mặc định, Application Load Balancer sẽ Enable cross zone, không thể tắt.
         - Mặc định, Network Load Balancer sẽ Disable cross zone. Cần enable sau khi tạo.
 
+- **Một số lưu ý về Load Balancer**
+    - Load Balancer là 1 dịch vụ Cross Zone, lưu ý khi **tạo ELB** nhớ **chọn tối đa số zone có thể chọn**. 
+    - NếuLoad Balancer được tạo không chọn zone có chứa ec2 instance, khi access sẽ bị lỗi không kết nối được (502 Bad Gateway).
 
 
 
@@ -197,13 +200,23 @@
 ## <div align="center"><strong>LAB</strong></div>
 
 <details>
-<summary></summary>
+<summary>&nbsp;&nbsp;<strong>Lab 01</strong></summary>
 <!-- Thêm lab vào sau dòng này -->
 
+<br>
+
+<p align="center">
+    <img src = "docs_imgs\elb_lab01.png" width="500">
+</p>
 
 
+<p align="center">
+    <img src = "docs_imgs\elb_lab01_step02.png" width="500">
+</p>
 
 
 
 <!-- Thêm lab vào trước dòng này -->
 </details> 
+
+
