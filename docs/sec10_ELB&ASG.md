@@ -16,6 +16,10 @@
         - Một số lưu ý về Load Balancer
 
     - [Auto Scaling Groups](#auto-scaling-groups)
+        - Scaling
+        - Auto Scaling Groups - Định nghĩa
+        - Launch Configuration and Launch Template
+        - Các phương pháp scale hệ thống
 
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
@@ -225,7 +229,7 @@
                 <img src="docs_imgs\asg_scale_outin.png" width="550" />
             </p>
 
-- **Auto Scaling Groups**
+- **Auto Scaling Groups - Định nghĩa**
     - Có nhiệm vụ **điều chỉnh số lượng của instance** cho **phù hợp với workload**, nhằm:
         - Tiết kiệm chi phí.
         - Tự động hóa việc mở rộng & phục hồi sự cố.
@@ -256,6 +260,12 @@
     |**Schedule** Scaling|**Đặt lịch tự động tăng giảm số instance theo thời gian**, phù hợp với các **hệ thống có workload tăng vào 1 thời điểm cố định trong ngày**.|
     |**Predict Scaling**| **AWS đưa ra dự đoán** dựa vào việc học **từ thông số hằng ngày, hằng tuần để điều chỉnh** số lượng instance một cách tự động. <br> Độ **chính xác** phụ thuộc vào **thời gian application đã vận hành** và **tính ổn định của traffic** đi vào hệ thống.|
 
+- **Lưu ý**
+    - Nếu deploy AMI version mới, hãy tăng lên gấp đôi số instance, sau đó lại hạ xuống để AWS tự terminate code cũ mà không ảnh hưởng người dùng cuối (tối ưu Elastic Load Balancer).
+    - Về bản chất ASG nhìn vào thông số Desire capacity để biết được cần thêm hay bớt instance trong cluster.
+        - Ví dụ:
+            - Cluster đang có 2 instances, set desire = 4 => ASG sẽ add thêm 2 instance.
+            - Cluster đang có 4 instances, set desire = 3 => ASG sẽ terminate bớt 1 instance.
 
 
             
@@ -289,6 +299,21 @@
 <p align="center">
     <img src = "docs_imgs\elb_lab01_step02.png" width="500">
 </p>
+
+
+
+<!-- Thêm lab vào trước dòng này -->
+</details> 
+
+
+<details>
+<summary>&nbsp;&nbsp;<strong>Lab 02</strong></summary>
+<!-- Thêm lab vào sau dòng này -->
+
+<p align="center">
+    <img src = "docs_imgs\asg_lab02.png" width="500">
+</p>
+
 
 
 

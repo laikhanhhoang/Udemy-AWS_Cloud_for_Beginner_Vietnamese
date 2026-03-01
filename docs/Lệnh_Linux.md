@@ -1,0 +1,1 @@
+- sudo systemctl enable httpd: dùng để **cấu hình service httpd tự động khởi động** khi hệ thống boot lên.

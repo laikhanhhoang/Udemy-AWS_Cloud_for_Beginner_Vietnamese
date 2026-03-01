@@ -9,6 +9,11 @@
     - [**Console** khi truy cập **ELB**](#console-khi-truy-cập-elb)
     - [Tạo **ELB**](#tạo-elb)
 
+- [Auto Scaling Groups](#auto-scaling-groups)
+    - [Launch Template](#asg---launch-template)
+    - [Tạo group mới](#asg--tạo-group-mới)
+    - [Tinh chỉnh phương pháp scale ASG](#asg---tinh-chỉnh-phương-pháp-scale)
+
 
 ## Elastic Load Balancer (ELB)
 
@@ -64,9 +69,64 @@
 </details>
 
 
+## Auto Scaling Groups
+
+<p align="center">
+    <img src = "asg\asg_create_scale_policy.png" width="800">
+</p>
 
 
+<details>
+<summary></summary>
 
+
+### ASG - Launch Template
+
+<p align="center">
+    <img src = "asg\asg_launch_template.png" width="1000">
+
+</p>
+
+<br>
+
+
+### ASG -Tạo Group mới
+
+<p align="center">
+    <img src = "asg\asg_create_step01.png" width="1000">
+
+</p>
+
+<p align="center">
+    <img src = "asg\asg_create_step02.png" width="1000">
+
+</p>
+
+<p align="center">
+    <img src = "asg\asg_create_step03.png" width="1000">
+
+</p>
+
+<br>
+
+### ASG - Tinh chỉnh phương pháp scale
+
+<p align="center">
+    <img src = "asg\asg_create_scale_policy.png" width="1000">
+
+</p>
+
+<p align="center">
+    <img src = "asg\asg_modify_policy.png" width="1000">
+
+</p>
+
+<br>
+
+- Ghi chú:
+    - Ngoài ra, muốn tinh chỉnh các thông tin khác vào tùy chọn **`Edit`** trên Console.
+
+</details>
 
 
 
