@@ -14,7 +14,7 @@
     - [**Tạo** ASG](#asg--tạo-group-mới)
     - [**Tinh chỉnh phương pháp scale** ASG](#asg---tinh-chỉnh-phương-pháp-scale)
 
-- [Relational Database Service](#relational-database-service-rds)
+- [Relational Database Service (RDS)](#relational-database-service-rds)
 
 
 ## Elastic Load Balancer (ELB)
