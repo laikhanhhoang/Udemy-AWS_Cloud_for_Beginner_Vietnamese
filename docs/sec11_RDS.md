@@ -154,7 +154,32 @@
         </p>
 
 
+- <details>
+    <summary><strong>Để monitor query log cho RDS (ví dụ PostgreSQL) có mấy cách ?</strong></summary>
 
+    - Slow Query Log (log_min_duration_statement)
+        - Cấu hình log_min_duration_statement để ghi lại các query vượt quá một ngưỡng thời gian (ví dụ 1000ms). Log có thể xem trực tiếp trên server hoặc đẩy sang CloudWatch để theo dõi tập trung.
+        - Phù hợp để phát hiện query chậm trong production mà không log toàn bộ truy vấn. Tuy nhiên nếu đặt ngưỡng quá thấp sẽ làm tăng I/O và dung lượng log.
+
+    - pg_stat_statements extension
+        - Bật extension pg_stat_statements để thu thập thống kê như tổng thời gian chạy, thời gian trung bình và số lần thực thi cho từng query pattern. Dữ liệu được lưu trong hệ thống catalog và truy vấn bằng SQL.
+        - Phù hợp cho performance tuning và tối ưu index vì có thể xác định query nào tiêu tốn tài nguyên nhiều nhất. **Không lưu từng câu query riêng lẻ mà lưu theo dạng đã được normalize**.
+
+    - Performance Insights (RDS/Aurora)
+        - Performance Insights cung cấp dashboard trực quan về DB load, wait events và top SQL theo thời gian thực. Có thể drill-down để xem query nào đang chiếm nhiều tài nguyên nhất.
+
+        - Phù hợp cho production monitoring vì có giao diện trực quan và không cần tự phân tích log. Dữ liệu mặc định lưu 7 ngày, muốn lưu lâu hơn cần trả phí.
+
+    - CloudWatch Logs Integration
+        - PostgreSQL trên RDS có thể export log sang CloudWatch để tập trung hóa monitoring và thiết lập alarm. Có thể kết hợp với metric filter để cảnh báo khi query vượt ngưỡng.
+
+        - Phù hợp khi bạn muốn tích hợp với hệ thống giám sát tổng thể của hệ thống backend. Tuy nhiên cần cấu hình thêm và có chi phí lưu trữ log.
+
+    - Application-level logging (Django debug logging)
+        - Bật django.db.backends logger để log query và thời gian thực thi ở tầng ứng dụng. Phù hợp cho môi trường development và debugging nhanh.
+        - **Không nên bật ở production** vì sẽ log toàn bộ query và ảnh hưởng hiệu năng. Chỉ dùng để kiểm tra logic hoặc tối ưu cục bộ.
+
+</details>
 
 
 
