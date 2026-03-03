@@ -14,6 +14,8 @@
     - [**Tạo** ASG](#asg--tạo-group-mới)
     - [**Tinh chỉnh phương pháp scale** ASG](#asg---tinh-chỉnh-phương-pháp-scale)
 
+- [Relational Database Service](#relational-database-service-rds)
+
 
 ## Elastic Load Balancer (ELB)
 
@@ -132,4 +134,45 @@ Gồm 7 bước:
 
 
 
+## Relational Database Service (RDS)
+
+<p align="center">
+    <img src = "rds/rds_create.png" width="800">
+
+</p>
+
+
+<details>
+<summary></summary>
+
+### Tạo Database
+
+
+
+<p align="center">
+    <img src = "rds/rds_create.png" width="1000">
+
+</p>
+
+<p align="center">
+    <img src = "rds/rds_create_step02.png" width="1000">
+
+</p>
+
+<p align="center">
+    <img src = "rds/rds_create_step03.png" width="1000">
+
+</p>
+
+<p align="center">
+    <img src = "rds/rds_create_step04.png" width="1000">
+
+</p>
+
+<br>
+
+
+
+
+</details>
 
