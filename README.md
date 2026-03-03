@@ -8,6 +8,7 @@
 - [Section 08 - IAM](docs/sec08_IAM.md)
 - [Section 09 - S3](docs/sec09_S3.md)
 - [Section 10 - ELB & ASG](docs/sec10_ELB&ASG.md)
+- [Section 10 - RDS](docs/sec11_RDS.md)
 
 ## Kiến thức bổ sung
 
