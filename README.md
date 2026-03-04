@@ -10,6 +10,7 @@
 - [Section 10 - ELB & ASG](docs/sec10_ELB&ASG.md)
 - [Section 11 - RDS](docs/sec11_RDS.md)
 - [Section 12 - DynamoDB](docs/sec12_DynamoDB.md)
+- [Section 13 - Lambda](docs/sec13_Lambda.md)
 
 ## Kiến thức bổ sung
 

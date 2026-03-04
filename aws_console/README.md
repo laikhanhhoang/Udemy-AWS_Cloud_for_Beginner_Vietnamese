@@ -18,6 +18,8 @@
 
 - [DynamoDB](#dynamodb)
 
+- [Lambda](#lambda)
+
 
 ## Elastic Load Balancer (ELB)
 
@@ -187,6 +189,22 @@ Gồm 7 bước:
 <details>
 <summary></summary>
 
+Không có thao tác đặc biệt
+
+
+
+
+</details>
+
+
+
+
+## Lambda
+
+
+<details>
+<summary></summary>
+
 ### Thao tác
 
 
@@ -200,8 +218,9 @@ Gồm 7 bước:
 
 
 - Ghi chú: <!--Ghi chú ở đây-->
-    - xyz abc def
+    - z
 
 </details>
+
 
 
