@@ -9,6 +9,7 @@
 - [Section 09 - S3](docs/sec09_S3.md)
 - [Section 10 - ELB & ASG](docs/sec10_ELB&ASG.md)
 - [Section 11 - RDS](docs/sec11_RDS.md)
+- [Section 12 - DynamoDB](docs/sec12_DynamoDB.md)
 
 ## Kiến thức bổ sung
 

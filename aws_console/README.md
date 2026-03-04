@@ -16,6 +16,8 @@
 
 - [Relational Database Service (RDS)](#relational-database-service-rds)
 
+- [DynamoDB](#dynamodb)
+
 
 ## Elastic Load Balancer (ELB)
 
@@ -175,4 +177,31 @@ Gồm 7 bước:
 
 
 </details>
+
+
+
+
+## DynamoDB
+
+
+<details>
+<summary></summary>
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+<br>
+
+
+- Ghi chú: <!--Ghi chú ở đây-->
+    - xyz abc def
+
+</details>
+
 
