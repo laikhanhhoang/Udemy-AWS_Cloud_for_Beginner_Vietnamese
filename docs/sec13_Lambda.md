@@ -5,6 +5,12 @@
 ## MỤC LỤC
 
 - [Lí thuyết](#lí-thuyết)
+    - Lambda - Định nghĩa
+    - Đặc trưng của Lambd
+    - Hệ sinh thái Lambda
+    - Ưu/Nhược điểm
+    - Khi nào dùng Lambda ?
+    - Lưu ý
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
@@ -72,7 +78,33 @@
         - Xử lý dữ liệu lớn, phân tích, tổng hợp data (hoặc chạy nhiều hơn 15p).
         - Machine Learning.
 
+- **Lưu ý**
 
+    - Mọi IAM user / IAM role trong cùng account đều dùng chung concurrency quota của account đó.
+
+        ```
+        AWS Account (quota concurrency)
+        │
+        ├── IAM user A
+        │     └── Lambda function A
+        │
+        ├── IAM user B
+        │     └── Lambda function B
+        │
+        └── IAM role C
+            └── Lambda function C
+        ```
+        Tất cả các Lambda này **dùng chung concurrency quota của account**.
+        
+        ```
+        Total concurrency = X
+
+        Unreserved ≥ 10
+
+        Σ Reserved ≤ X - 10
+
+        Provisioned_Ri ≤ Reserved_Ri
+        ```
 
 
 <!-- Thêm lí thuyết vào trước dòng này -->
@@ -91,10 +123,33 @@
 <summary>&nbsp;&nbsp;<strong>Lab 01</strong></summary>
 <!-- Thêm lab vào sau dòng này -->
 
+<p align="center">
+    <img src = "docs_imgs\lambda_lab01.png" width="500">
+</p>
+
+<!-- Thêm lab vào trước dòng này -->
+</details> 
 
 
+<details>
+<summary>&nbsp;&nbsp;<strong>Lab 02</strong></summary>
+<!-- Thêm lab vào sau dòng này -->
+
+<p align="center">
+    <img src = "docs_imgs\lambda_lab02.png" width="500">
+</p>
+
+<!-- Thêm lab vào trước dòng này -->
+</details> 
 
 
+<details>
+<summary>&nbsp;&nbsp;<strong>Lab 03</strong></summary>
+<!-- Thêm lab vào sau dòng này -->
+
+<p align="center">
+    <img src = "docs_imgs\lambda_lab03.png" width="500">
+</p>
 
 <!-- Thêm lab vào trước dòng này -->
 </details> 

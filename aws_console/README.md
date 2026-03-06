@@ -19,7 +19,8 @@
 - [DynamoDB](#dynamodb)
 
 - [Lambda](#lambda)
-
+    - [Đóng gói Layer bằng file .zip](#lambda---tạo-layer)
+    - [Tạo **Lambda function**](#lambda---tạo-lambda-function)
 
 ## Elastic Load Balancer (ELB)
 
@@ -202,17 +203,35 @@ Không có thao tác đặc biệt
 ## Lambda
 
 
+<p align="center">
+    <img src = "lambda/lambda_base.png" width="800">
+</p>
+
 <details>
 <summary></summary>
 
-### Thao tác
+### Lambda - Tạo Layer
+<p align="center">
+    <img src = "lambda/lambda_tao_layer.png" width="600">
+</p>
 
+### Lambda - Tạo Lambda Function
 
 
 <p align="center">
-    <img src = "link_tới_ảnh" width="1000">
-
+    <img src = "lambda/lambda_layersrccode.png" width="1000">
 </p>
+
+
+<p align="center">
+    <img src = "lambda/lambda_configure.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "lambda/lambda_alias.png" width="1000">
+</p>
+
+
 
 <br>
 
