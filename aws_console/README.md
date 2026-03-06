@@ -221,7 +221,7 @@ Không có thao tác đặc biệt
 
 
 <p align="center">
-    <img src = "lambda/lambda_layersrccode.png" width="1000">
+    <img src = "lambda/lambda_layer&srccode.png" width="1000">
 </p>
 
 
