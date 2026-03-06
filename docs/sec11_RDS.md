@@ -1,5 +1,5 @@
 <h1 align="center">
-    <strong>Relational Database Service (RDS)</strong>
+    <strong>RELATIONAL DATABASE SERVICE (RDS)</strong>
 </h1>
 
 ## MỤC LỤC

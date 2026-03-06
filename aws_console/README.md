@@ -22,6 +22,8 @@
     - [Đóng gói Layer bằng file .zip](#lambda---tạo-layer)
     - [Tạo **Lambda function**](#lambda---tạo-lambda-function)
 
+- [Virtual Private Cloud (VPC)](#virtual-private-cloud-vpc)
+
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
@@ -236,10 +238,29 @@ Không có thao tác đặc biệt
 <br>
 
 
-- Ghi chú: <!--Ghi chú ở đây-->
-    - z
-
 </details>
 
 
 
+## Virtual Private Cloud (VPC)
+
+
+<details>
+<summary></summary>
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+<br>
+
+
+- Ghi chú: <!--Ghi chú ở đây-->
+    - xyz abc def
+
+</details>
