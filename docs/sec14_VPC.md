@@ -91,7 +91,7 @@
 
 ## <div align="center"><strong>LAB</strong></div>
 
-<details>
+
 <summary>&nbsp;&nbsp;<strong>Lab 01</strong></summary>
 <!-- Thêm lab vào sau dòng này -->
 
@@ -112,7 +112,6 @@
 
 
 <!-- Thêm lab vào trước dòng này -->
-</details> 
 
 
 <details>
