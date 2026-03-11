@@ -20,7 +20,8 @@
 - **Các thành phần cơ bản của VPC**
     - VPC: Một mạng ảo được tạo ra ở cấp độ region.
     - Subnet: Một dải IP được định nghĩa nằm trong VPC. Mỗi subnet phải được quyết định Availability Zone tại thời điểm tạo ra.
-    - **Route table**: xác định traffic sẽ được điều hướng đi đâu trong mạng.
+    - Routing: xác định traffic sẽ được điều hướng đi đâu trong mạng.
+    - **Route table**: **bảng định tuyến cho traffic rời khỏi subnet**.
         - Route Table sẽ quyết định một subnet sẽ là Private hay Public.
         - Subnet được gọi là Public khi có route đi tới 
         - Internet Gateway và ngược lại.
@@ -28,13 +29,13 @@
         - Default VPC do AWS tạo sẵn sẽ có 1 main route table associate với toàn bộ subnet.
     - IP Address: IP V4 hoặc V6 được cấp phát. Có 2 loại là Public IP và Private IP.
     - Elastic IP: IP được cấp phát riêng, có thể access từ internet (public), không bị thu hồi khi instance start -> stop.
-    - **Security Group**: Đóng vai trò như một firewall ở cấp độ instance, định nghĩa traffic được đi vào /đi ra. 
+    - **Security Group**: Đóng vai trò như một firewall ở **cấp độ instance, định nghĩa traffic được đi vào /đi ra**. 
         - Thường được **dùng để gom nhóm các resource có chung network setting (in/out, protocol, port)**.
         - Khi thiết kế cần quan tâm tới tính tái sử dụng, dễ quản lý.
         - Source của một Security Group có thể là CIDR hoặc id của một Security Group khác.
         - Rule của Security Group là stateful và không có deny rule.
         - *Statefull có nghĩa là nếu Inbound cho phép traffic đi vào thì khi request tới sẽ nhận được response mà không cần explicit allow Outbound. Khác với Network ACL.*
-    - **Network Access Controll List (ACL)**: được apply ở cấp độ subnet, tương tự như security group nhưng có rule Deny và các rule được đánh độ ưu tiên. Khi tạo VPC sẽ có **một ACL mặc định** được apply cho toàn bộ subnet trong VPC **là mở all traffic không chặn gì cả**.
+    - **Network Access Controll List (ACL)**: được apply ở **cấp độ subnet, tương tự như security group** nhưng có rule Deny và các rule được đánh độ ưu tiên. Khi tạo VPC sẽ có **một ACL mặc định** được apply cho toàn bộ subnet trong VPC **là mở all traffic không chặn gì cả**.
         - Control network in/out đối với subnet được associate.
         - Mỗi rule sẽ có các thông số:
             - Priority
@@ -63,6 +64,11 @@
         - Endpoint có thể được cấu hình Security Group để hạn chế truy cập.
     - Peering connection: kênh kết nối giữa 2 VPC.
     - Transit gateways: đóng vai trò như 1 hub đứng giữa các VPCs, VPN Connection, Direct Connect.
+
+    <p align="center">
+        <img src = "docs_imgs\vpc_minhhoa.png" width="700">
+    </p>
+
 
 
 
@@ -99,6 +105,30 @@
 <p align="center">
     <img src = "docs_imgs\vpc_lab01_drawio.png" width="500">
 </p>
+
+
+
+
+
+
+<!-- Thêm lab vào trước dòng này -->
+</details> 
+
+
+<details>
+<summary>&nbsp;&nbsp;<strong>Lab 02</strong></summary>
+<!-- Thêm lab vào sau dòng này -->
+
+<p align="center">
+    <img src = "docs_imgs\vpc_lab02.png" width="500">
+</p>
+
+
+
+
+
+
+
 
 
 

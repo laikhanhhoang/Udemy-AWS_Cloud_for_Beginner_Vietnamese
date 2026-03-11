@@ -23,6 +23,8 @@
     - [Tạo **Lambda function**](#lambda---tạo-lambda-function)
 
 - [Virtual Private Cloud (VPC)](#virtual-private-cloud-vpc)
+    - [Tạo VPC mới](#vpc---tạo-vpc-mới)
+    - [Tùy chỉnh](#vpc---tùy-chỉnh)
 
 ## Elastic Load Balancer (ELB)
 
@@ -244,23 +246,72 @@ Không có thao tác đặc biệt
 
 ## Virtual Private Cloud (VPC)
 
+<p align="center">
+    <img src = "vpc/vpc_main_dashboard.png" width="800">
+</p>
 
 <details>
 <summary></summary>
 
-### Thao tác
+### VPC - Tạo VPC mới
 
 
 
 <p align="center">
-    <img src = "link_tới_ảnh" width="1000">
+    <img src = "vpc/vpc_create_subnet.png" width="1000">
+    <br>
+    <i>Tạo subnet</i>
+</p>
 
+<p align="center">
+    <img src = "vpc/vpc_create_rtb.png" width="1000">
+    <br>
+    <i>Tạo Route Table</i>
+</p>
+
+<p align="center">
+    <img src = "vpc/vpc_igw_dashboard.png" width="1000">
+    <br>
+    <i>Tạo Internet Gateway</i>
+</p>
+
+<p align="center">
+    <img src = "vpc/vpc_create_natgw.png" width="1000">
+    <br>
+    <i>Tạo NAT Gateway</i>
+</p>
+
+<p align="center">
+    <img src = "vpc/vpc_create_s3_endpoint.png" width="1000">
+    <br>
+    <i>Tạo S3 Endpoint</i>
 </p>
 
 <br>
 
 
-- Ghi chú: <!--Ghi chú ở đây-->
-    - xyz abc def
+### VPC - Tùy chỉnh
+
+
+
+<p align="center">
+    <img src = "vpc/vpc_subnet_associate.png" width="1000">
+    <br>
+    <i>Tùy chỉnh Subnet</i>
+</p>
+
+
+<p align="center">
+    <img src = "vpc/vpc_edit_pub_rtb.png" width="1000">
+    <br>
+    <i>Tùy chỉnh Route Table</i>
+</p>
+
+
+<br>
+
+
+
+
 
 </details>
