@@ -362,10 +362,14 @@ Không có thao tác đặc biệt
 
 <p align="center">
     <img src = "api_gw/api_gw_createapi_05_trigger_lambda_successful.png" width="1000">
+    <br>
+    <i>Trigger Lambda thành công.</i>
 </p>
 
 <p align="center">
     <img src = "api_gw/api_gw_createapi_06_test_postman_successful.png" width="1000">
+    <br>
+    <i>Test API thành công trên Postman.</i>
 </p>
 
 <br>
