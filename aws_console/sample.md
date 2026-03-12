@@ -2,6 +2,10 @@
 
 ## Tên dịch vụ
 
+<p align="center">
+    <img src = "truy_cap_service" width="800">
+</p>
+
 
 <details>
 <summary></summary>

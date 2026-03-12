@@ -12,6 +12,8 @@
 - [Section 12 - DynamoDB](docs/sec12_DynamoDB.md)
 - [Section 13 - Lambda](docs/sec13_Lambda.md)
 - [Section 14 - VPC](docs/sec14_VPC.md)
+- [Section 15 - API Gateway](docs/sec15_APIGW&Cognito.md)
+
 
 ## Kiến thức bổ sung
 

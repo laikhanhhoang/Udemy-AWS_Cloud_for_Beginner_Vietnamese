@@ -26,6 +26,11 @@
     - [Tạo VPC mới](#vpc---tạo-vpc-mới)
     - [Tùy chỉnh](#vpc---tùy-chỉnh)
 
+- [API Gateway](#api-gateway)
+
+
+- [Cognito](#cognito)
+
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
@@ -311,7 +316,69 @@ Không có thao tác đặc biệt
 <br>
 
 
+</details>
 
 
+
+
+
+## API Gateway
+
+<p align="center">
+    <img src = "truy_cap_service" width="800">
+</p>
+
+
+<details>
+<summary></summary>
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+<br>
+
+
+- Ghi chú: <!--Ghi chú ở đây-->
+    - xyz abc def
 
 </details>
+
+
+
+
+## Cognito
+
+<p align="center">
+    <img src = "truy_cap_service" width="800">
+</p>
+
+
+<details>
+<summary></summary>
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+<br>
+
+
+- Ghi chú: <!--Ghi chú ở đây-->
+    - xyz abc def
+
+</details>
+
+
+
+
