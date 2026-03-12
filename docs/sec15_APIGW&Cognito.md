@@ -106,7 +106,9 @@
 <summary>&nbsp;&nbsp;<strong>Lab 01</strong></summary>
 <!-- Thêm lab vào sau dòng này -->
 
-
+<p align="center">
+    <img src = "docs_imgs\apigw_lab01.png" width="500">
+</p>
 
 
 

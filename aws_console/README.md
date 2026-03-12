@@ -34,7 +34,7 @@
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
-    <img src = "elb\elb_new.png" width="800">
+    <img src = "elb/elb_new.png" width="800">
 
 </p>
 
@@ -45,7 +45,7 @@
 
 
 <p align="center">
-    <img src = "elb\elb_create_target_group_step01.png" width="1000">
+    <img src = "elb/elb_create_target_group_step01.png" width="1000">
 
 </p>
 
@@ -88,7 +88,7 @@
 ## Auto Scaling Groups
 
 <p align="center">
-    <img src = "asg\asg_create_scale_policy.png" width="800">
+    <img src = "asg/asg_create_scale_policy.png" width="800">
 </p>
 
 
@@ -99,7 +99,7 @@
 ### ASG - Launch Template
 
 <p align="center">
-    <img src = "asg\asg_launch_template.png" width="1000">
+    <img src = "asg/asg_launch_template.png" width="1000">
 
 </p>
 
@@ -111,17 +111,17 @@
 Gồm 7 bước:
 
 <p align="center">
-    <img src = "asg\asg_create_step01.png" width="1000">
+    <img src = "asg/asg_create_step01.png" width="1000">
 
 </p>
 
 <p align="center">
-    <img src = "asg\asg_create_step02.png" width="1000">
+    <img src = "asg/asg_create_step02.png" width="1000">
 
 </p>
 
 <p align="center">
-    <img src = "asg\asg_create_step03.png" width="1000">
+    <img src = "asg/asg_create_step03.png" width="1000">
 
 </p>
 
@@ -130,12 +130,12 @@ Gồm 7 bước:
 ### ASG - Tinh chỉnh phương pháp scale
 
 <p align="center">
-    <img src = "asg\asg_create_scale_policy.png" width="1000">
+    <img src = "asg/asg_create_scale_policy.png" width="1000">
 
 </p>
 
 <p align="center">
-    <img src = "asg\asg_modify_policy.png" width="1000">
+    <img src = "asg/asg_modify_policy.png" width="1000">
 
 </p>
 
@@ -325,27 +325,53 @@ Không có thao tác đặc biệt
 ## API Gateway
 
 <p align="center">
-    <img src = "truy_cap_service" width="800">
+    <img src = "api_gw/api_gw_main_dashboard.png" width="800">
 </p>
 
 
 <details>
 <summary></summary>
 
-### Thao tác
+### Tạo API Gateway
 
 
 
 <p align="center">
-    <img src = "link_tới_ảnh" width="1000">
+    <img src = "api_gw/api_gw_createapi_01_choose_api_type.png" width="1000">
+    <br>
+    <i>Bước 1: Chọn loại API.</i>
+</p>
 
+<p align="center">
+    <img src = "api_gw/api_gw_createapi_02_conf.png" width="1000">
+    <br>
+    <i>Bước 2: Configure API.</i>
+</p>
+
+<p align="center">
+    <img src = "api_gw/api_gw_createapi_03_create_resource.png" width="1000">
+    <br>
+    <i>Bước 3: Tạo đường dẫn.</i>
+</p>
+
+<p align="center">
+    <img src = "api_gw/api_gw_createapi_04_create_method.png" width="1000">
+    <br>
+    <i>Bước 3: Chọn method (POST/GET/...) và tùy chỉnh tham số (ví dụ query params,...).</i>
+</p>
+
+<p align="center">
+    <img src = "api_gw/api_gw_createapi_05_trigger_lambda_successful.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "api_gw/api_gw_createapi_06_test_postman_successful.png" width="1000">
 </p>
 
 <br>
 
 
-- Ghi chú: <!--Ghi chú ở đây-->
-    - xyz abc def
+
 
 </details>
 
@@ -362,13 +388,12 @@ Không có thao tác đặc biệt
 <details>
 <summary></summary>
 
-### Thao tác
+### thao tác
 
 
 
 <p align="center">
     <img src = "link_tới_ảnh" width="1000">
-
 </p>
 
 <br>
