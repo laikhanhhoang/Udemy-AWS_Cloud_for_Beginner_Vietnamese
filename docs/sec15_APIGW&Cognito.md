@@ -31,6 +31,7 @@
     - **Dễ dàng kết hợp với các dịch vụ khác** như CloudWatch, WAF cho mục đích monitor & security.
 
 - **Hệ sinh thái API Gateway**
+
     API Gateway là một service chủ yếu có nhiệm vụ nhận request của client sau đó forward tới các service phía sau.
 
     <p align="center">
