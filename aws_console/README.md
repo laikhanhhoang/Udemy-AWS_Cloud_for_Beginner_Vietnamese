@@ -27,6 +27,7 @@
     - [Tùy chỉnh](#vpc---tùy-chỉnh)
 
 - [API Gateway](#api-gateway)
+    - [Tạo API Gateway](#api-gateway---tạo-api-gateway)
 
 
 - [Cognito](#cognito)
@@ -332,7 +333,7 @@ Không có thao tác đặc biệt
 <details>
 <summary></summary>
 
-### Tạo API Gateway
+### API Gateway - Tạo API Gateway
 
 
 
@@ -385,28 +386,10 @@ Không có thao tác đặc biệt
 ## Cognito
 
 <p align="center">
-    <img src = "truy_cap_service" width="800">
+    <img src = "cognito/cognito_configure_setup_app_userpool.png" width="800">
 </p>
 
 
-<details>
-<summary></summary>
-
-### thao tác
-
-
-
-<p align="center">
-    <img src = "link_tới_ảnh" width="1000">
-</p>
-
-<br>
-
-
-- Ghi chú: <!--Ghi chú ở đây-->
-    - xyz abc def
-
-</details>
 
 
 

@@ -6,6 +6,17 @@
 
 - [Lí thuyết](#lí-thuyết)
     - [API Gateway](#api-gateway)
+        - API Gateway - Định nghĩa
+        - Đặc trưng của API Gateway
+        - Hệ sinh thái API Gateway
+        - Khi nào nên sử dụng API Gateway?
+        - Pricing
+        - Authentication cho API Gateway
+    - [Cognito](#cognito)
+        - AWS Cognito - Định nghĩa
+        - Tính năng cơ bản của Cognito
+        - Pricing
+        - Hạn chế của Cognito
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
@@ -84,17 +95,58 @@
             <img src = "docs_imgs\apigw_lambda_author.png" width="450">
         </p>
 
-
-
-
-
-
-
 <!-- Thêm lí thuyết API Gateway vào trước dòng này -->
+<br><br>
 
 
 
 
+### <div><strong>COGNITO</strong></div>
+<!-- Thêm lí thuyết Cognito vào sau dòng này -->
+
+- **AWS Cognito - Định nghĩa**
+    - Là một dịch vụ **quản lý danh tính và xác thực người dùng** của Amazon Web Services (AWS). 
+    - Dịch vụ này cho phép bạn tạo ra các ứng dụng web và di động an toàn với khả năng xác thực người dùng, phân quyền, và đăng nhập với nhiều tùy chọn như user account, Social login hoặc đăng nhập qua Identity Provider.
+
+- **Tính năng cơ bản của Cognito**
+    - **Đăng ký & Xác thực người dùng** sử dụng **username/pw/email hoặc tài khoản mạng xã hội**.
+    - **Phân quyền** người dùng vào các ứng dụng hoặc tài nguyên
+    - **Xác thực** email/số điện thoại.
+    - Tích hợp với các dịch vụ khác (API Gateway, Lambda) để xây dựng ứng dụng.
+    - Hỗ trợ cho ứng dụng di động (iOS,Android) thông qua SDK
+    - Cognito sync: sync data giữa các mobile device với nhau
+    - Advanced Security: giám sát & phân tích truy cập của user để phát hiện và ngăn chặn truy cập bất thường (optional).
+
+- **Pricing**
+
+    Pricing của Cognito dựa trên:
+    - Số lượng Monthly Active User. VD ở Singapore là $0.0055/MAU (càng lên cao càng rẻ)
+    - User sign in thông qua SAML hoặc OIDC: $0.015/MAU
+    - Tính năng Advance Security: $0.05/MAU nếu enable
+    - SMS trong trường hợp gửi message MFA: Tuỳ theo khu vực.
+
+- **Hạn chế của Cognito**
+    - Hạn chế về **User Pool**:
+        - Số lượng User trên 1 user pool: 40M (contact AWS nếu muốn tăng)
+        - Số lượng user pool tối đa: default 1,000, max 10,000
+        - Custom attribute: 50
+    - Hạn chế về **tần suất Admin API call**:
+        - UserCreation: 50 RPS. Tăng thêm 10RPS cho mỗi 1 triệu MAU
+        - AdminUserRead: 120 RPS. Tăng thêm 40 RPS cho mỗi 1 triệu MAU
+        - RevokeToken: 120 RPS. Tăng thêm 40 RPS cho mỗi 1 triệu MAU
+        - UserUpdate: 25 RPS không thể tăng thêm.
+        - ...
+
+    - *Lưu ý về **cơ chế verify token của Cognito**:*
+        - *JWT token do Cognito phát hành thông thường sẽ dùng client side verify (sử dụng Public Key do Cognito cung cấp. Lưu ý AWS không cung cấp private key của Cognito).Việc này đồng nghĩa với việc nếu user logout thì access-token vẫn có hiệu lực cho tới khi expired (vd 30 min).*
+        - *Nếu hệ thống có nhu cầu revoke access-token đã phát hành khi user có các hành động như change password, log-out thì không thể thực hiện với Cognito. Tất nhiên có thể workaround sử dụng các kỹ thuật Caching/DB.*
+
+
+
+
+
+
+<!-- Thêm lí thuyết Cognito vào trước dòng này -->
 
 
 <br><br>
@@ -116,11 +168,59 @@
 <!-- Thêm lab vào trước dòng này -->
 </details> 
 
+
+
+<details>
+<summary>&nbsp;&nbsp;<strong>Lab 02</strong></summary>
+<!-- Thêm lab vào sau dòng này -->
+
+<p align="center">
+    <img src = "docs_imgs\cognito_lab02.png" width="500">
+</p>
+
+
+
+
+<!-- Thêm lab vào trước dòng này -->
+</details> 
+
+
+<details>
+<summary>&nbsp;&nbsp;<strong>Lab 03</strong></summary>
+<!-- Thêm lab vào sau dòng này -->
+
+<p align="center">
+    <img src = "docs_imgs\cognito_lab03.png" width="500">
+</p>
+
+
+
+
+<!-- Thêm lab vào trước dòng này -->
+</details> 
+
+
+<details>
+<summary>&nbsp;&nbsp;<strong>Lab 04</strong></summary>
+<!-- Thêm lab vào sau dòng này -->
+
+<p align="center">
+    <img src = "docs_imgs\cognito_lab04.png" width="500">
+</p>
+
+
+
+
+<!-- Thêm lab vào trước dòng này -->
+</details> 
+
+
+
 <br><br><br><br><br>
 
 ## <div align="center"><strong>TÀI LIỆU BỔ SUNG</strong></div>
 
 - Nội dung phục vụ lab: [Code](/labs/sec_15)
 - AWS Console liên quan:
-    - [API Gateway](/aws_console/README.md#tên-dịch-vụ-1)
-    - [Cognito](/aws_console/README.md#tên-dịch-vụ-2)
+    - [API Gateway](/aws_console/README.md#api-gateway)
+    - [Cognito](/aws_console/README.md#cognito)
