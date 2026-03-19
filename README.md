@@ -13,6 +13,8 @@
 - [Section 13 - Lambda](docs/sec13_Lambda.md)
 - [Section 14 - VPC](docs/sec14_VPC.md)
 - [Section 15 - API Gateway & Cognito](docs/sec15_APIGW&Cognito.md)
+- [Section 16 - CloudFront](docs/sec16_CloudFront.md)
+- [Section 17 - Route 53](docs/sec17_Route53.md)
 
 
 ## Kiến thức bổ sung

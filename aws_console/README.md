@@ -32,6 +32,10 @@
 
 - [Cognito](#cognito)
 
+- [Cloud Front](#cloud-front)
+
+- [Route 53](#route-53)
+
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
@@ -393,4 +397,62 @@ Không có thao tác đặc biệt
 
 
 
+
+
+## Cloud Front
+
+<p align="center">
+    <img src = "truy_cap_service" width="800">
+</p>
+
+
+<details>
+<summary></summary>
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+<br>
+
+
+- Ghi chú: <!--Ghi chú ở đây-->
+    - xyz abc def
+
+</details>
+
+
+
+
+## Route 53
+
+<p align="center">
+    <img src = "truy_cap_service" width="800">
+</p>
+
+
+<details>
+<summary></summary>
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+<br>
+
+
+- Ghi chú: <!--Ghi chú ở đây-->
+    - xyz abc def
+
+</details>
 
