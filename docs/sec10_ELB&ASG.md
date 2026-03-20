@@ -7,13 +7,13 @@
 - [Lí thuyết](#lí-thuyết)
     - [Elastic Load Balancer](#elastic-load-balancer)
         - "Single point of failure" - Sự ra đời của Load Balancer
-        - Elastic Load Balancing - Định nghĩa
-        - Các thành phần cơ bản của Load Balancer
-        - Các loại Load Balancer
-        - Cách Load Balancer hoạt động
-        - Load Balancer tính phí như thế nào?
-        - Cross zone load balancer
-        - Một số lưu ý về Load Balancer
+        - [Elastic Load Balancing - Định nghĩa](#elastic-load-balancing---định-nghĩa)
+        - [Các thành phần cơ bản của Load Balancer](#các-thành-phần-cơ-bản-của-load-balancer)
+        - [Các loại Load Balancer](#các-loại-load-balancer)
+        - [Cách Load Balancer hoạt động](#cách-load-balancer-hoạt-động)
+        - [Load Balancer tính phí như thế nào?](#load-balancer-pricing)
+        - [Cross zone load balancer](#cross-zone-load-balancer)
+        - [Một số lưu ý về Load Balancer](#một-số-lưu-ý-về-load-balancer)
 
     - [Auto Scaling Groups](#auto-scaling-groups)
         - Scaling
@@ -23,6 +23,10 @@
 
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
+    - Nội dung phục vụ lab: [Code](/labs/sec_10)
+    - AWS Console liên quan:
+        - [ELB](/aws_console/README.md#elastic-load-balancer-elb)
+        - [ASG](/aws_console/README.md#auto-scaling-groups-asg)
 
 ## <div align="center"><strong>LÍ THUYẾT</strong></div>
 
@@ -70,144 +74,144 @@
 
 </details>
 
-- **Elastic Load Balancing - Định nghĩa**
-    - Là một dịch vụ của AWS có nhiệm vụ **điều hướng request từ client đến các target backend**, **đảm bảo request được cân bằng giữa các target**:
-        - **High Availability**.
-        - **Scalability**: về lý thuyết là không giới hạn.
-        - **High Security**: nếu kết hợp với các dịch vụ khác như WAF, Security Group.
-    - ELB có thể dễ dàng **kết hợp** với đa dạng backend sử dụng EC2, Container, Lambda.
+#### **Elastic Load Balancing - Định nghĩa**
+- Là một dịch vụ của AWS có nhiệm vụ **điều hướng request từ client đến các target backend**, **đảm bảo request được cân bằng giữa các target**:
+    - **High Availability**.
+    - **Scalability**: về lý thuyết là không giới hạn.
+    - **High Security**: nếu kết hợp với các dịch vụ khác như WAF, Security Group.
+- ELB có thể dễ dàng **kết hợp** với đa dạng backend sử dụng EC2, Container, Lambda.
 
-- **Các thành phần cơ bản của Load Balancer**
-    - Load Balancer cho phép setting các listener (trên 1 port nào đó vd HTTP:80, HTTPS:443)
-    - **Mỗi Listener** cho phép cấu hình **nhiều rule**.
-    - Request sau khi đi vào listener, được đánh giá bởi các rule sẽ được forward tới target group phù hợp.
-    - **Target group có nhiệm vụ health check** để phát hiện và loại bỏ target un-healthy.
+#### **Các thành phần cơ bản của Load Balancer**
+- Load Balancer cho phép setting các listener (trên 1 port nào đó vd HTTP:80, HTTPS:443)
+- **Mỗi Listener** cho phép cấu hình **nhiều rule**.
+- Request sau khi đi vào listener, được đánh giá bởi các rule sẽ được forward tới target group phù hợp.
+- **Target group có nhiệm vụ health check** để phát hiện và loại bỏ target un-healthy.
+
+<br>
+
+<p align="center">
+    <img src="docs_imgs\elb_theory.png" width="500" />
+</p>
+
+#### **Các loại Load Balancer**
+- Các loại ELB được phân chia phụ thuộc vào việc nó hoạt động trên layer nào của mô hình OSI 7 layers.
+
+    <p align="center">
+        <img src="docs_imgs\elb_osi_model.jpg" width="400" />
+    </p>
+
+
+    <details>
+    <summary><strong>OSI Model - Note</strong></summary>
+
+    - Tầng Transport (Layer 4)
+
+        Tầng Transport chịu trách nhiệm truyền dữ liệu giữa các process (ứng dụng) trên hai máy khác nhau thông qua port. Nó đảm bảo phân biệt ứng dụng nào đang gửi/nhận dữ liệu và quyết định cách truyền có đáng tin cậy hay không (reliable hay không reliable).
+
+    - TCP/UDP là gì, đóng gói cái gì?
+
+        Transmission Control Protocol (TCP) và User Datagram Protocol (UDP) là hai giao thức của tầng Transport. Chúng đóng gói dữ liệu từ tầng Application (ví dụ HTTP) thành segment (TCP) hoặc datagram (UDP), thêm header chứa source port và destination port, rồi chuyển xuống tầng IP để gửi đi. TCP đảm bảo thứ tự và độ tin cậy; UDP thì không.
+
+    - Ví dụ với Django request
+
+        Khi client gửi một HTTP request đến server chạy Django, request đó được đóng gói thành HTTP message \
+        → được TCP đóng thành segment (thêm port) \
+        → được IP đóng thành packet (thêm địa chỉ IP) \
+        → truyền qua mạng. 
+        
+        Ở phía server, dữ liệu được tháo ngược lại và web server (gunicorn/uwsgi) chuyển HTTP request đã hoàn chỉnh cho Django xử lý ở tầng Application.
+    
+    - Xem kĩ hơn trong mục Kiến thức bổ sung tại [Readme.md](/README.md).
+
+    </details>
 
     <br>
 
     <p align="center">
-        <img src="docs_imgs\elb_theory.png" width="500" />
+        <img src="docs_imgs\elb_all_kinds.png" width="500" />
     </p>
 
-- **Các loại Load Balancer**
-    - Các loại ELB được phân chia phụ thuộc vào việc nó hoạt động trên layer nào của mô hình OSI 7 layers.
+<br>
 
-        <p align="center">
-            <img src="docs_imgs\elb_osi_model.jpg" width="400" />
-        </p>
-
-
+- Application Load Balancer
+    - Là loại Load Balancer thường dùng, phù hợp cho đa số các nhu cầu.
+    - Hoạt động trên layer 7 – Application.
+    - Do hoạt động trên layer 7 nên có một số ưu thể vượt trội so với các loại LB khác:
+        - Hỗ trợ Path routing condition
+        - Hỗ trợ host condition, cho phép dùng nhiều domain cùng trỏ vào 1 ALB
+        - Hỗ trợ routing dựa trên thuộc tính của request (header, ip..)
+        - Tích hợp được với Lambda, Container service
+        - Hỗ trợ trả về custom HTTP response
+    - 
         <details>
-        <summary><strong>OSI Model - Note</strong></summary>
+        <summary>Nếu traffic là TCP thuần (không phải HTTP), ALB có hiểu nội dung để route theo path được không?</summary>
 
-        - Tầng Transport (Layer 4)
+        - AWS Application Load Balancer là Layer 7 Load Balancer. Điều này có nghĩa là nó hoạt động ở tầng Application và được thiết kế để hiểu các giao thức:
+            - HTTP/1.1
+            - HTTP/2
+            - HTTPS (HTTP over TLS)
+            - WebSocket (HTTP Upgrade)
+            - gRPC (chạy trên HTTP/2)
 
-            Tầng Transport chịu trách nhiệm truyền dữ liệu giữa các process (ứng dụng) trên hai máy khác nhau thông qua port. Nó đảm bảo phân biệt ứng dụng nào đang gửi/nhận dữ liệu và quyết định cách truyền có đáng tin cậy hay không (reliable hay không reliable).
-
-        - TCP/UDP là gì, đóng gói cái gì?
-
-            Transmission Control Protocol (TCP) và User Datagram Protocol (UDP) là hai giao thức của tầng Transport. Chúng đóng gói dữ liệu từ tầng Application (ví dụ HTTP) thành segment (TCP) hoặc datagram (UDP), thêm header chứa source port và destination port, rồi chuyển xuống tầng IP để gửi đi. TCP đảm bảo thứ tự và độ tin cậy; UDP thì không.
-
-        - Ví dụ với Django request
-
-            Khi client gửi một HTTP request đến server chạy Django, request đó được đóng gói thành HTTP message \
-            → được TCP đóng thành segment (thêm port) \
-            → được IP đóng thành packet (thêm địa chỉ IP) \
-            → truyền qua mạng. 
-            
-            Ở phía server, dữ liệu được tháo ngược lại và web server (gunicorn/uwsgi) chuyển HTTP request đã hoàn chỉnh cho Django xử lý ở tầng Application.
-        
-        - Xem kĩ hơn trong mục Kiến thức bổ sung tại [Readme.md](/README.md).
-
+        - Khi cấu hình ALB, bạn phải khai báo listener protocol (HTTP hoặc HTTPS). ALB chỉ chấp nhận traffic phù hợp với protocol đó. Nếu một TCP stream không tuân theo chuẩn HTTP được gửi vào listener HTTP, ALB sẽ từ chối vì không parse được request line và header theo RFC của HTTP.
         </details>
 
-        <br>
+<br>
+
+- Network Load Balancer
+    - Hoạt động trên layer 4 – Transport
+    - Hỗ trợ 2 giao thức TCP và UDP
+    - Không hỗ trợ nhiều hình thức rule routing.
+    - Thường dùng cho những hệ thống cóworkoad rất cao, lên tới hàng triệu request/s.
+
+- Gateway Load Balancer
+    - Giúp triển khai, scale và quản lý các Virtual Applicance (3rd party)
+    - Mục đích: Firewall, Phát hiện ngăn chặn xâm nhập (intrusion detection and prevention systems), kiểm tra gói tin chuyên sâu.
+    - Hoạtđộngtrên layer 3 (Network) & Layer 4 (Transport).
+    - GLB listen trên tất cả các port và forward traffic đến các target group dựa trên các rule.
+    - GLB sửdụngGLB Endpoint để trao đổi traffic giữa VPC của service provider & VPC của consumer.
+    - Danhsách các provider có tại: https://aws.amazon.com/elasticloadbalancing/partners/
+    - Trong dự án thực tế thì đây là loại LB **ít được sử dụng nhất**.
+    - Ví dụ
 
         <p align="center">
-            <img src="docs_imgs\elb_all_kinds.png" width="500" />
+            <img src="docs_imgs\elb_gateway.png" width="520" />
         </p>
-    
-    <br>
 
-    - Application Load Balancer
-        - Là loại Load Balancer thường dùng, phù hợp cho đa số các nhu cầu.
-        - Hoạt động trên layer 7 – Application.
-        - Do hoạt động trên layer 7 nên có một số ưu thể vượt trội so với các loại LB khác:
-            - Hỗ trợ Path routing condition
-            - Hỗ trợ host condition, cho phép dùng nhiều domain cùng trỏ vào 1 ALB
-            - Hỗ trợ routing dựa trên thuộc tính của request (header, ip..)
-            - Tích hợp được với Lambda, Container service
-            - Hỗ trợ trả về custom HTTP response
-        - 
-            <details>
-            <summary>Nếu traffic là TCP thuần (không phải HTTP), ALB có hiểu nội dung để route theo path được không?</summary>
+        - Gateway LB được đặt bên trong VPC của Security Provider
+        - Traffic đi vào và đi ra hệ thống bên VPC của consumer được cấu hình routing để đi qua Gateway LB trước khi đến được target cần đến.
+        - Mũi tên màu xanh: traffic đi từ internet vào. 
+        - MàuCam: traffic từ bên trong đi ra.
 
-            - AWS Application Load Balancer là Layer 7 Load Balancer. Điều này có nghĩa là nó hoạt động ở tầng Application và được thiết kế để hiểu các giao thức:
-                - HTTP/1.1
-                - HTTP/2
-                - HTTPS (HTTP over TLS)
-                - WebSocket (HTTP Upgrade)
-                - gRPC (chạy trên HTTP/2)
+#### **Cách Load Balancer hoạt động**
+- Load Balancer có thể điều hướng tới nhiều hơn 1 target. Trong trường hợp multi-target, việc điều hướng tới target nào sẽ được quyết định bởi 1 số rule sau:
+    - Listener port
+    - Path pattern (Application LB only)
+    - Fixed ratio. VD Target Group 01 nhận 20%, Target Group 02 nhận 80% traffic.
 
-            - Khi cấu hình ALB, bạn phải khai báo listener protocol (HTTP hoặc HTTPS). ALB chỉ chấp nhận traffic phù hợp với protocol đó. Nếu một TCP stream không tuân theo chuẩn HTTP được gửi vào listener HTTP, ALB sẽ từ chối vì không parse được request line và header theo RFC của HTTP.
-            </details>
-    
-    <br>
+- Mặc định Load Balancer sẽ phân phối request từ client đến các target trong 1 Target Group theo tỷ lệ cân bằng (round robin), kể cả khi target đó nằm trong nhiều hơn 1 target group.
 
-    - Network Load Balancer
-        - Hoạt động trên layer 4 – Transport
-        - Hỗ trợ 2 giao thức TCP và UDP
-        - Không hỗ trợ nhiều hình thức rule routing.
-        - Thường dùng cho những hệ thống cóworkoad rất cao, lên tới hàng triệu request/s.
+    Có nghĩa là nếu **Load Balancer** quyết định cho **1 loại request** với pattern xyz/abc **đến một target group** EC2, thì nó sẽ được **phân chia đều** đến mọi EC2 trong group.
 
-    - Gateway Load Balancer
-        - Giúp triển khai, scale và quản lý các Virtual Applicance (3rd party)
-        - Mục đích: Firewall, Phát hiện ngăn chặn xâm nhập (intrusion detection and prevention systems), kiểm tra gói tin chuyên sâu.
-        - Hoạtđộngtrên layer 3 (Network) & Layer 4 (Transport).
-        - GLB listen trên tất cả các port và forward traffic đến các target group dựa trên các rule.
-        - GLB sửdụngGLB Endpoint để trao đổi traffic giữa VPC của service provider & VPC của consumer.
-        - Danhsách các provider có tại: https://aws.amazon.com/elasticloadbalancing/partners/
-        - Trong dự án thực tế thì đây là loại LB **ít được sử dụng nhất**.
-        - Ví dụ
+    *Ví dụ:* một target group gồm **6 EC2**, thì mỗi EC2 có **16,66% (1/6)** được nhận xử lí request đó.
 
-            <p align="center">
-                <img src="docs_imgs\elb_gateway.png" width="520" />
-            </p>
+#### **Load Balancer Pricing**
+- Mặc định Elastic Load Balancer tính tiền theo giờ ($/hour), giá phụ thuộc vào region.
+- Ngoài ra còn tính phí dựa trên số lượng request, lượng data transfer qua Load Balancer quy đổi ra Load Balancer Capacity Units (LCUs)
+- Khi estimate cho Load Balancer, user sẽ input các thông số như số lượng request per second (RPS), lưu lượng data (GB/TB per hour), số lượng connection new, thời gian trung bình cho một connection, số lượng rule. AWS sẽ quy đổi thành LCUs để ước tính chi phí.
 
-            - Gateway LB được đặt bên trong VPC của Security Provider
-            - Traffic đi vào và đi ra hệ thống bên VPC của consumer được cấu hình routing để đi qua Gateway LB trước khi đến được target cần đến.
-            - Mũi tên màu xanh: traffic đi từ internet vào. 
-            - MàuCam: traffic từ bên trong đi ra.
+#### **Cross zone load balancer**
+- ELB là 1 dịch vụ hoạt động cross zone (AWS suggest chọn tất cả các zone có thể khi khởi tạo ELB).
+    - Nếu **Cross zone load balance** được **enable**, ELB sẽ điều hướng request từ client một cách **cân bằng tới các target**.
+    - Nếu **Cross zone load balance** được **disable**, ELB sẽ điều hướng request từ client một cách **cân bằng tới mỗi zone**, trong 1 zone sẽ chia đều tiếp cho các instances.
 
-- **Cách Load Balancer hoạt động**
-    - Load Balancer có thể điều hướng tới nhiều hơn 1 target. Trong trường hợp multi-target, việc điều hướng tới target nào sẽ được quyết định bởi 1 số rule sau:
-        - Listener port
-        - Path pattern (Application LB only)
-        - Fixed ratio. VD Target Group 01 nhận 20%, Target Group 02 nhận 80% traffic.
+- Lưu ý
+    - Mặc định, Application Load Balancer sẽ Enable cross zone, không thể tắt.
+    - Mặc định, Network Load Balancer sẽ Disable cross zone. Cần enable sau khi tạo.
 
-    - Mặc định Load Balancer sẽ phân phối request từ client đến các target trong 1 Target Group theo tỷ lệ cân bằng (round robin), kể cả khi target đó nằm trong nhiều hơn 1 target group.
-
-        Có nghĩa là nếu **Load Balancer** quyết định cho **1 loại request** với pattern xyz/abc **đến một target group** EC2, thì nó sẽ được **phân chia đều** đến mọi EC2 trong group.
-
-        *Ví dụ:* một target group gồm **6 EC2**, thì mỗi EC2 có **16,66% (1/6)** được nhận xử lí request đó.
-
-- **Load Balancer tính phí như thế nào?**
-    - Mặc định Elastic Load Balancer tính tiền theo giờ ($/hour), giá phụ thuộc vào region.
-    - Ngoài ra còn tính phí dựa trên số lượng request, lượng data transfer qua Load Balancer quy đổi ra Load Balancer Capacity Units (LCUs)
-    - Khi estimate cho Load Balancer, user sẽ input các thông số như số lượng request per second (RPS), lưu lượng data (GB/TB per hour), số lượng connection new, thời gian trung bình cho một connection, số lượng rule. AWS sẽ quy đổi thành LCUs để ước tính chi phí.
-
-- **Cross zone load balancer**
-    - ELB là 1 dịch vụ hoạt động cross zone (AWS suggest chọn tất cả các zone có thể khi khởi tạo ELB).
-        - Nếu **Cross zone load balance** được **enable**, ELB sẽ điều hướng request từ client một cách **cân bằng tới các target**.
-        - Nếu **Cross zone load balance** được **disable**, ELB sẽ điều hướng request từ client một cách **cân bằng tới mỗi zone**, trong 1 zone sẽ chia đều tiếp cho các instances.
-
-    - Lưu ý
-        - Mặc định, Application Load Balancer sẽ Enable cross zone, không thể tắt.
-        - Mặc định, Network Load Balancer sẽ Disable cross zone. Cần enable sau khi tạo.
-
-- **Một số lưu ý về Load Balancer**
-    - Load Balancer là 1 dịch vụ Cross Zone, lưu ý khi **tạo ELB** nhớ **chọn tối đa số zone có thể chọn**. 
-    - NếuLoad Balancer được tạo không chọn zone có chứa ec2 instance, khi access sẽ bị lỗi không kết nối được (502 Bad Gateway).
+#### **Một số lưu ý về Load Balancer**
+- Load Balancer là 1 dịch vụ Cross Zone, lưu ý khi **tạo ELB** nhớ **chọn tối đa số zone có thể chọn**. 
+- NếuLoad Balancer được tạo không chọn zone có chứa ec2 instance, khi access sẽ bị lỗi không kết nối được (502 Bad Gateway).
 
 <br><br>
 

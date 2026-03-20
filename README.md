@@ -5,16 +5,124 @@
 ## Mục lục
 
 - [Section 07 - EC2](docs/sec07_EC2.md)
+
+
+
+
 - [Section 08 - IAM](docs/sec08_IAM.md)
+    - [Policy](docs/sec08_IAM.md#policy): quy định việc ai/cái gì có thể hoặc không thể làm gì.
+    - [User](docs/sec08_IAM.md#user): dại diện cho 1 profile của 1 người dùng trên AWS account.
+    - [Role](docs/sec08_IAM.md#role): cấp quyền cho 1 thực thể có thể tương tác với các resources khác trên AWS
+    - [Group](docs/sec08_IAM.md#group): đại diện cho 1 nhóm user trên hệ thống.
+
+
+
 - [Section 09 - S3](docs/sec09_S3.md)
+    - [Định nghĩa](docs/sec09_S3.md#định-nghĩa)
+    - [Các tính năng cơ bản](docs/sec09_S3.md#các-tính-năng-cơ-bản)
+    - [Kết hợp dịch vụ khác với S3](docs/sec09_S3.md#kết-hợp-dịch-vụ-khác-với-s3)
+    - [S3 Storage Class](docs/sec09_S3.md#s3-storage-class): S3 Standard, S3 Standard-IA, S3 Glacier,...
+    - [S3 Lyfe Cycle](docs/sec09_S3.md#s3-lyfe-cycle): Tính năng cho phép tự động move object xuống các class lưu trữ thấp hơn hoặc xoá luôn sau một khoảng thời gian nhằm tiết kiệm chi phí.
+    - [S3 event trigger](docs/sec09_S3.md#s3-event-trigger): cung cấp cơ chế trigger 1 event sang dịch vụ khác khi có thay đổi đối với object (upload, delete).
+    - [Best Practices](docs/sec09_S3.md#best-practices)
+
+
+
 - [Section 10 - ELB & ASG](docs/sec10_ELB&ASG.md)
+    - [Elastic Load Balancer](docs/sec10_ELB&ASG.md#elastic-load-balancer)
+        - "Single point of failure" - Sự ra đời của Load Balancer
+        - [Elastic Load Balancing - Định nghĩa](docs/sec10_ELB&ASG.md#elastic-load-balancing---định-nghĩa)
+        - [Các thành phần cơ bản của Load Balancer](docs/sec10_ELB&ASG.md#các-thành-phần-cơ-bản-của-load-balancer)
+        - [Các loại Load Balancer](docs/sec10_ELB&ASG.md#các-loại-load-balancer)
+        - [Cách Load Balancer hoạt động](docs/sec10_ELB&ASG.md#cách-load-balancer-hoạt-động)
+        - [Load Balancer tính phí như thế nào?](docs/sec10_ELB&ASG.md#load-balancer-pricing)
+        - [Cross zone load balancer](docs/sec10_ELB&ASG.md#cross-zone-load-balancer)
+        - [Một số lưu ý về Load Balancer](docs/sec10_ELB&ASG.md#một-số-lưu-ý-về-load-balancer)
+    - [Auto Scaling Groups](docs/sec10_ELB&ASG.md#auto-scaling-groups)
+        - Scaling
+        - Auto Scaling Groups - Định nghĩa
+        - Launch Configuration and Launch Template
+        - Các phương pháp scale hệ thống
+    - AWS Console liên quan:
+        - [ELB](/aws_console/README.md#elastic-load-balancer-elb)
+        - [ASG](/aws_console/README.md#auto-scaling-groups-asg)
+
+
+
 - [Section 11 - RDS](docs/sec11_RDS.md)
+    - [RDS - Định nghĩa](docs/sec11_RDS.md#rds---định-nghĩa)
+    - [Các tính năng cơ bản của RDS](docs/sec11_RDS.md#các-tính-năng-cơ-bản-của-rds)
+    - [RDS Usecase](docs/sec11_RDS.md#rds-usecase)
+    - [Các mô hình triển khai RDS](docs/sec11_RDS.md#các-mô-hình-triển-khai-rds): Single Instance, Single Instance with Multi-AZ, Master – Read Only cluster, Master – Read Only cluster with Multi-AZ, Master – Multi Read cluster.
+    - [Aurora](docs/sec11_RDS.md#aurora)
+    - [Parameter Groups](docs/sec11_RDS.md#parameter-groups)
+
+        <p align="center">
+            <img src="docs\docs_imgs\rds_para_groups.png" width="450" />
+        </p>
+
+    - AWS Console liên quan: [Relational Database Service](/aws_console/README.md#relational-database-service-rds).
+
+
+
+
 - [Section 12 - DynamoDB](docs/sec12_DynamoDB.md)
 - [Section 13 - Lambda](docs/sec13_Lambda.md)
+    - [Lambda - Định nghĩa](docs/sec12_DynamoDB.md#lambda---định-nghĩa)
+    - [Đặc trưng của Lambd](docs/sec12_DynamoDB.md#đặc-trưng-của-lambda)
+    - [Hệ sinh thái Lambda](docs/sec12_DynamoDB.md#hệ-sinh-thái-lambda)
+    - [Ưu/Nhược điểm](docs/sec12_DynamoDB.md#ưunhược-điểm)
+    - [Khi nào dùng Lambda ?](docs/sec12_DynamoDB.md#khi-nào-dùng-lambda-)
+    - [Lưu ý](docs/sec12_DynamoDB.md#lưu-ý)
+    - AWS Console liên quan: [Lambda](/aws_console/README.md#lambda).
+
+
+
 - [Section 14 - VPC](docs/sec14_VPC.md)
+    - [VPC - Định nghĩa](docs/sec14_VPC.md#vpc---định-nghĩa): *tạo một mạng ảo** (virtual network) và **control toàn bộ network in/out của mạng đó**.
+    - [Các thành phần cơ bản của VPC](docs/sec14_VPC.md#các-thành-phần-cơ-bản-của-vpc): **Security Group**, **Security Group**, **Internet Gateway**, **NAT Gateway**, **VPC Endpoint**,...
+    - AWS Console liên quan: [VPC](/aws_console/README.md#virtual-private-cloud-vpc).
+
+
+
 - [Section 15 - API Gateway & Cognito](docs/sec15_APIGW&Cognito.md)
+    - [API Gateway](docs/sec15_APIGW&Cognito.md#api-gateway)
+        - [API Gateway - Định nghĩa](docs/sec15_APIGW&Cognito.md#api-gateway---định-nghĩa): **xây dựng, quản lý và bảo mật** các **RESTful API hoặc WebSocket**.
+        - [Đặc trưng của API Gateway](docs/sec15_APIGW&Cognito.md#đặc-trưng-của-api-gateway)
+        - [Hệ sinh thái API Gateway](docs/sec15_APIGW&Cognito.md#hệ-sinh-thái-api-gateway)
+        - [Khi nào nên sử dụng API Gateway?](docs/sec15_APIGW&Cognito.md#khi-nào-nên-sử-dụng-api-gateway)
+        - [Pricing](docs/sec15_APIGW&Cognito.md#api-gateway-pricing)
+        - [Authentication cho API Gateway](docs/sec15_APIGW&Cognito.md#authentication-cho-api-gateway): gồm 2 phương thức tích hợp trực tiếp: **Cognito Authorizer** và **Lambda Authorizer**.
+    - AWS Console liên quan:
+        - [API Gateway](/aws_console/README.md#api-gateway)
+        - [Cognito](/aws_console/README.md#cognito)
+
+
+
 - [Section 16 - CloudFront](docs/sec16_CloudFront.md)
+    - [CDN - Định nghĩa](docs/sec16_CloudFront.md#cdn---định-nghĩa): **giúp delivery nội dung nhanh chóng nhờ cache tài nguyên** trên máy chủ gần.
+    - [Cloud Front - Khái niệm cơ bản](docs/sec16_CloudFront.md#cloud-front---khái-niệm-cơ-bản): cache, loggin, security.
+    - [Cách hoạt động của Cloud Front](docs/sec16_CloudFront.md#cách-hoạt-động-của-cloud-front)
+    - [Usecase](docs/sec16_CloudFront.md#usecase)
+    - [Pricing](docs/sec16_CloudFront.md#pricing)
+    - [CloudFront behavior](docs/sec16_CloudFront.md#cloudfront-behavior): **điều hướng request tới đúng origin mong muốn** như **`/*`, `api/*`**,...
+    - [CloudFront Cache Policy](docs/sec16_CloudFront.md#cloudfront-cache-policy): **tùy chỉnh cách cache và serves content**: có thể cache hoặc không đối với API,...
+    - [CloudFront Origin request policy](docs/sec16_CloudFront.md#cloudfront-cache-policy): định nghĩa cách CloudFront **xử lý request tới origin** như S3, EC2, ALB,...
+    - AWS Console liên quan: [Cloud Front](/aws_console/README.md#cloud-front).
+
+
+
 - [Section 17 - Route 53](docs/sec17_Route53.md)
+    - [Route 53 - Định nghĩa](docs/sec17_Route53.md#route-53---định-nghĩa): **quản lý các tên miền và ánh xạ chúng**.
+    - [3 tính năng chính](docs/sec17_Route53.md#3-tính-năng-chính)
+    - [DNS Resolver](docs/sec17_Route53.md#dns-resolver)
+    - [Route 53 Hosted Zone](docs/sec17_Route53.md#route-53---định-nghĩa)
+        - Các loại DNS Record: **`A (domain → IP), CNAME (domain → domain)`**,...
+    - [Routing policy](docs/sec17_Route53.md#routing-policy): Simple, Weighted, Latency,...
+    - [SSL Certificate](docs/sec17_Route53.md#ssl-certificate): Do ACM cấp cho một **domain hoặc subdomain duy nhất** để **xác minh quyền sở hữu domain**.
+    - [Pricing](docs/sec17_Route53.md#pricing)
+    - [Lưu ý](docs/sec17_Route53.md#lưu-ý)
+    - AWS Console liên quan: [Route 53](/aws_console/README.md#route-53).
 
 
 ## Kiến thức bổ sung
