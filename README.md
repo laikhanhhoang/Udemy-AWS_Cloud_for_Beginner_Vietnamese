@@ -84,7 +84,7 @@
         <img src = "docs\docs_imgs\vpc_minhhoa.png" width="600">
     </p>
 
-    - [VPC - Định nghĩa](docs/sec14_VPC.md#vpc---định-nghĩa): *tạo một mạng ảo** (virtual network) và **control toàn bộ network in/out của mạng đó**.
+    - [VPC - Định nghĩa](docs/sec14_VPC.md#vpc---định-nghĩa): **tạo một mạng ảo** (virtual network) và **control toàn bộ network in/out của mạng đó**.
     - [Các thành phần cơ bản của VPC](docs/sec14_VPC.md#các-thành-phần-cơ-bản-của-vpc): **Security Group**, **Security Group**, **Internet Gateway**, **NAT Gateway**, **VPC Endpoint**,...
     - AWS Console liên quan: [VPC](/aws_console/README.md#virtual-private-cloud-vpc).
 
