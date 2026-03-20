@@ -5,6 +5,12 @@
 ## MỤC LỤC
 
 - [Lí thuyết](#lí-thuyết)
+    - Route 53 - Định nghĩa
+    - 3 tính năng chính
+    - DNS Resolver
+    - Route 53 Hosted Zone
+        - Các loại DNS Record
+    - Routing policy
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
@@ -51,11 +57,18 @@
         |**TXT Record** (Text Record)| Cho phép bạn lưu trữ các dữ liệu văn bản tùy ý cho tên miền. Nó thường được sử dụng để xác thực tên miền và cung cấp thông tin khác nhau cho các dịch vụ khác. <br> *Ví dụ*: **myweb.com** **→ TXT →** **`"v=spf1 include:spf.myweb.com ~all"`**.|
         |**SRV Record** (Service Record)| Xác định vị trí và cấu hình dịch vụ cụ thể trên mạng. Nó được sử dụng chủ yếu trong việc xác định các máy chủ chịu trách nhiệm cho các dịch vụ như VoIP (Voice over IP) và IM (Instant Messaging). <br> *Ví dụ*: **`_sip._tcp.myweb.com`** **→ SRV →** **`10 60 5060 sipserver.myweb.com`**.|
 
-        <p align="center">
-            <img src = "docs_imgs\route53_dns_record_subdomain.png" width="700">
-        </p>
+        - **Ví dụ**:
+
+            <p align="center">
+                <img src = "docs_imgs\route53_dns_record_subdomain.png" width="700">
+            </p>
+
+            - **api.linhnguyen.click** thuộc **A record**.
+            - **web.linhnguyen.click** thuộc **CName record**.
 
 
+
+<br>
 
 - **Routing policy**
 
