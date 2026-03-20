@@ -55,10 +55,10 @@
     - [RDS Usecase](docs/sec11_RDS.md#rds-usecase)
     - [Các mô hình triển khai RDS](docs/sec11_RDS.md#các-mô-hình-triển-khai-rds): Single Instance, Single Instance with Multi-AZ, Master – Read Only cluster, Master – Read Only cluster with Multi-AZ, Master – Multi Read cluster.
     - [Aurora](docs/sec11_RDS.md#aurora)
-    - [Parameter Groups](docs/sec11_RDS.md#parameter-groups)
+    - [Parameter Groups](docs/sec11_RDS.md#parameter-groups): thông qua 1 cơ chế gián tiếp để can thiệp vào setting ở cấp độ DB (không phải setting OS).
 
         <p align="center">
-            <img src="docs\docs_imgs\rds_para_groups.png" width="450" />
+            <img src="docs\docs_imgs\rds_para_groups.png" width="500" />
         </p>
 
     - AWS Console liên quan: [Relational Database Service](/aws_console/README.md#relational-database-service-rds).
@@ -79,6 +79,11 @@
 
 
 - [Section 14 - VPC](docs/sec14_VPC.md)
+
+    <p align="center">
+        <img src = "docs\docs_imgs\vpc_minhhoa.png" width="600">
+    </p>
+
     - [VPC - Định nghĩa](docs/sec14_VPC.md#vpc---định-nghĩa): *tạo một mạng ảo** (virtual network) và **control toàn bộ network in/out của mạng đó**.
     - [Các thành phần cơ bản của VPC](docs/sec14_VPC.md#các-thành-phần-cơ-bản-của-vpc): **Security Group**, **Security Group**, **Internet Gateway**, **NAT Gateway**, **VPC Endpoint**,...
     - AWS Console liên quan: [VPC](/aws_console/README.md#virtual-private-cloud-vpc).
@@ -87,6 +92,7 @@
 
 - [Section 15 - API Gateway & Cognito](docs/sec15_APIGW&Cognito.md)
     - [API Gateway](docs/sec15_APIGW&Cognito.md#api-gateway)
+
         - [API Gateway - Định nghĩa](docs/sec15_APIGW&Cognito.md#api-gateway---định-nghĩa): **xây dựng, quản lý và bảo mật** các **RESTful API hoặc WebSocket**.
         - [Đặc trưng của API Gateway](docs/sec15_APIGW&Cognito.md#đặc-trưng-của-api-gateway)
         - [Hệ sinh thái API Gateway](docs/sec15_APIGW&Cognito.md#hệ-sinh-thái-api-gateway)
@@ -100,12 +106,18 @@
 
 
 - [Section 16 - CloudFront](docs/sec16_CloudFront.md)
+
     - [CDN - Định nghĩa](docs/sec16_CloudFront.md#cdn---định-nghĩa): **giúp delivery nội dung nhanh chóng nhờ cache tài nguyên** trên máy chủ gần.
     - [Cloud Front - Khái niệm cơ bản](docs/sec16_CloudFront.md#cloud-front---khái-niệm-cơ-bản): cache, loggin, security.
     - [Cách hoạt động của Cloud Front](docs/sec16_CloudFront.md#cách-hoạt-động-của-cloud-front)
     - [Usecase](docs/sec16_CloudFront.md#usecase)
     - [Pricing](docs/sec16_CloudFront.md#pricing)
     - [CloudFront behavior](docs/sec16_CloudFront.md#cloudfront-behavior): **điều hướng request tới đúng origin mong muốn** như **`/*`, `api/*`**,...
+
+        <p align="center">
+            <img src = "docs\docs_imgs\cloudfront_behaviour_example.png" width="500">
+        </p>
+
     - [CloudFront Cache Policy](docs/sec16_CloudFront.md#cloudfront-cache-policy): **tùy chỉnh cách cache và serves content**: có thể cache hoặc không đối với API,...
     - [CloudFront Origin request policy](docs/sec16_CloudFront.md#cloudfront-cache-policy): định nghĩa cách CloudFront **xử lý request tới origin** như S3, EC2, ALB,...
     - AWS Console liên quan: [Cloud Front](/aws_console/README.md#cloud-front).
@@ -118,6 +130,16 @@
     - [DNS Resolver](docs/sec17_Route53.md#dns-resolver)
     - [Route 53 Hosted Zone](docs/sec17_Route53.md#route-53---định-nghĩa)
         - Các loại DNS Record: **`A (domain → IP), CNAME (domain → domain)`**,...
+
+        - **Ví dụ**:
+
+            <p align="center">
+                <img src = "docs\docs_imgs\route53_dns_record_subdomain.png" width="500">
+            </p>
+
+            - **api.linhnguyen.click** thuộc **A record**.
+            - **web.linhnguyen.click** thuộc **CName record**.
+
     - [Routing policy](docs/sec17_Route53.md#routing-policy): Simple, Weighted, Latency,...
     - [SSL Certificate](docs/sec17_Route53.md#ssl-certificate): Do ACM cấp cho một **domain hoặc subdomain duy nhất** để **xác minh quyền sở hữu domain**.
     - [Pricing](docs/sec17_Route53.md#pricing)

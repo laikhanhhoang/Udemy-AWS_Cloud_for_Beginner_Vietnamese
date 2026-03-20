@@ -160,7 +160,9 @@
     </p>
 
 
-#### <details>
+#### 
+
+<details>
 <summary><strong>Để monitor query log cho RDS (ví dụ PostgreSQL) có mấy cách ?</strong></summary>
 
 - Slow Query Log (log_min_duration_statement)
