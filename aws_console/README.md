@@ -33,8 +33,10 @@
 - [Cognito](#cognito)
 
 - [Cloud Front](#cloud-front)
+    - [Tạo CloudFront Distribution mới](#cloud-front---tạo-một-cloudfront-distribution)
+    - [Add Origin mới vào CloudFront Distribution](#cloud-front----add-thêm-origin-vào-cloudfront-distribution)
 
-- [Route 53](#route-53)
+- [Route 53](#route-53) **KHÔNG HỖ TRỢ VỚI ACC FREE TIER**
 
 ## Elastic Load Balancer (ELB)
 
@@ -43,8 +45,7 @@
 
 </p>
 
-<details>
-<summary>&nbsp;&nbsp;</summary>
+
 
 ### Tạo **Target Group**
 
@@ -87,7 +88,7 @@
     - Port ở đây là port <strong>của ELB</strong> khi truy cập &lt;ELB_DNS&gt;:&lt;DES_PORT&gt;.
 
 
-</details>
+
 
 
 ## Auto Scaling Groups
@@ -97,8 +98,7 @@
 </p>
 
 
-<details>
-<summary></summary>
+
 
 
 ### ASG - Launch Template
@@ -149,7 +149,7 @@ Gồm 7 bước:
 - Ghi chú:
     - Ngoài ra, muốn tinh chỉnh các thông tin khác vào tùy chọn **`Action/Edit`** trên Console.
 
-</details>
+
 
 
 
@@ -161,8 +161,7 @@ Gồm 7 bước:
 </p>
 
 
-<details>
-<summary></summary>
+
 
 ### Tạo Database
 
@@ -193,7 +192,7 @@ Gồm 7 bước:
 
 
 
-</details>
+
 
 
 
@@ -201,15 +200,14 @@ Gồm 7 bước:
 ## DynamoDB
 
 
-<details>
-<summary></summary>
+
 
 Không có thao tác đặc biệt
 
 
 
 
-</details>
+
 
 
 
@@ -221,8 +219,7 @@ Không có thao tác đặc biệt
     <img src = "lambda/lambda_base.png" width="800">
 </p>
 
-<details>
-<summary></summary>
+
 
 ### Lambda - Tạo Layer
 <p align="center">
@@ -250,7 +247,7 @@ Không có thao tác đặc biệt
 <br>
 
 
-</details>
+
 
 
 
@@ -260,8 +257,7 @@ Không có thao tác đặc biệt
     <img src = "vpc/vpc_main_dashboard.png" width="800">
 </p>
 
-<details>
-<summary></summary>
+
 
 ### VPC - Tạo VPC mới
 
@@ -321,7 +317,7 @@ Không có thao tác đặc biệt
 <br>
 
 
-</details>
+
 
 
 
@@ -334,8 +330,7 @@ Không có thao tác đặc biệt
 </p>
 
 
-<details>
-<summary></summary>
+
 
 ### API Gateway - Tạo API Gateway
 
@@ -382,7 +377,7 @@ Không có thao tác đặc biệt
 
 
 
-</details>
+
 
 
 
@@ -406,10 +401,9 @@ Không có thao tác đặc biệt
 </p>
 
 
-<details>
-<summary></summary>
 
-### Tạo một CloudFront Distribution
+
+### Cloud Front - Tạo một CloudFront Distribution
 
 
 
@@ -443,7 +437,7 @@ Không có thao tác đặc biệt
 
 
 
-### Add thêm Origin vào CloudFront Distribution
+### Cloud Front -  Add thêm Origin vào CloudFront Distribution
 
 <p align="center">
     <img src = "cloudfront/cloudfront_addorigin_step01.png" width="1000">
@@ -463,35 +457,13 @@ Không có thao tác đặc biệt
 
 
 
-</details>
+
 
 
 
 
 ## Route 53
 
-<p align="center">
-    <img src = "truy_cap_service" width="800">
-</p>
+**KHÔNG HỖ TRỢ ACC FREE TIER**
 
-
-<details>
-<summary></summary>
-
-### Thao tác
-
-
-
-<p align="center">
-    <img src = "link_tới_ảnh" width="1000">
-
-</p>
-
-<br>
-
-
-- Ghi chú: <!--Ghi chú ở đây-->
-    - xyz abc def
-
-</details>
 
