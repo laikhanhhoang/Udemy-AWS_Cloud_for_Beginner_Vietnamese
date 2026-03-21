@@ -46,6 +46,7 @@
         - Origin server trả kết quả cho edge location.
         - Ngay sau khi nhận được firstbyte response, edge location forward object tới end-user đồng thời cache lại nội dung cho request lần sau.
     - **Từ lần request thứ 2 trở đi**, mặc định edge location sẽ trả về object được yêu cầu mà không gọi tới origin server giúp tăng tốc độ truy cập.
+- AWS hiện tại nếu bạn đã deploy frontend trong S3 thì sau khi set S3 làm origin trong Cloudfront thì không cần set IAM Role bằng OAI/OAC nữa.
 
 #### **Usecase** 
 - Tăng tốc website (Image, CSS, Document, Video,...).

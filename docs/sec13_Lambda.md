@@ -32,6 +32,18 @@
     - Custom Runtime
     - Container
 
+- Lambda function bản thân nó không có một link public trực tiếp như một website. Để truy cập Lambda từ bên ngoài, bạn cần dùng một trong các cách sau:
+    - API Gateway:
+        - Tạo REST API hoặc HTTP API trên API Gateway và **liên kết với Lambda bằng cách tạo IAM Role cho API GW ở Resource-based Policy trong Lambda**.
+
+            <p align="center">
+                <img src = "docs_imgs\lambda_resourcebased_policy.png" width="700">
+            </p>
+
+        - API Gateway sẽ cung cấp một URL public, ví dụ: **`https://abcd1234.execute-api.us-east-1.amazonaws.com/prod/my-function`**.
+    - Application Load Balancer (ALB).
+    - AWS Lambda Function URL (mới).
+
 #### **Đặc trưng của Lambda**
 - Khi tạo 1 lambda function, bạn quyết định cấu hình thông qua thông số Memory. Min = 128MB, Max = 10GB. Memory càng cao, CPU được allocate càng lớn.
 - Lambda khi khởi chạy được cấp phát 1 vùng nhớ tạm min = 512MB max =10GB, sẽ bị xoá khi lambda thực thi xong.

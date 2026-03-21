@@ -402,27 +402,66 @@ Không có thao tác đặc biệt
 ## Cloud Front
 
 <p align="center">
-    <img src = "truy_cap_service" width="800">
+    <img src = "cloudfront/cloudfront_createdist_success.png" width="800">
 </p>
 
 
 <details>
 <summary></summary>
 
-### Thao tác
+### Tạo một CloudFront Distribution
 
 
 
 <p align="center">
-    <img src = "link_tới_ảnh" width="1000">
-
+    <img src = "cloudfront/cloudfront_createdist_step01.png" width="1000">
 </p>
+
+<p align="center">
+    <img src = "cloudfront/cloudfront_createdist_step02.png" width="1000">
+</p>
+
+- Lưu ý: 
+    - **Origin Path** là một phần path được CloudFront tự động thêm vào mỗi request gửi về origin.
+        - Ví dụ:
+            - Bạn có CloudFront distribution với:
+                - **Origin domain**: **`https://abcd1234.execute-api.us-east-1.amazonaws.com`** (API Gateway)
+                - **Origin path**: **`/dev`**
+            - Khi client gọi CloudFront URL: **`https://d123.cloudfront.net/calculate?a=5&b=6`**.
+            - CloudFront sẽ gửi request về origin là: **`https://abcd1234.execute-api.us-east-1.amazonaws.com/dev/calculate?a=5&b=6`**
+            - Nếu không điền Origin Path, CloudFront gửi nguyên path client tới origin, tức là **`/calculate?a=5&b=6`**.
+
+
+
+<p align="center">
+    <img src = "cloudfront/cloudfront_createdist_step03_confirm.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "cloudfront/cloudfront_createdist_success.png" width="1000">
+</p>
+
+
+
+### Add thêm Origin vào CloudFront Distribution
+
+<p align="center">
+    <img src = "cloudfront/cloudfront_addorigin_step01.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "cloudfront/cloudfront_addorigin_behaviour.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "cloudfront/cloudfront_addorigin_connectapigw_success.png" width="1000">
+</p>
+
 
 <br>
 
 
-- Ghi chú: <!--Ghi chú ở đây-->
-    - xyz abc def
+
 
 </details>
 
