@@ -60,7 +60,11 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
     - *Ví dụ: một tác vụ xử lý **decode một video mất 10 mins** thì bạn nên để **`Visibility Timeout > 10 phút`** để **tránh tình trạng xung đột xử lý giữa các consumers**.*
 
         <p align="center">
-            <img src = "docs_imgs\sqs_message_process.png" width="500">
+            <img src = "docs_imgs\sqs_consumer_conflict_no_timeout.png" width="500">
+        </p>
+
+        <p align="center">
+            <img src = "docs_imgs\sqs_consumer_conflict.png" width="500">
         </p>
 
 - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**. 
