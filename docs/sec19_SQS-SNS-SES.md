@@ -12,6 +12,33 @@
             - **Visibility Timeout**: **thời gian message tạm bị ẩn đi với các consumer khác trong khi được receive bởi một consumer nào đó**. Quá thời gian này nếu **message chưa bị xoá** sẽ quay trở lại queue. 
             - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**, dùng để setting **Dead-letter Queue**.
             - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
+            -
+                <details>
+                <summary><strong>Workflow đâỳ đủ của SQS với các thông số trên</strong></summary>
+
+                ```
+                Consumer gọi ReceiveMessage → SQS KHÔNG TRẢ NGAY → đợi tối đa X giây (long polling wait time)
+                    - Nếu CÓ message, trả message về NGAY cho consumer:
+                        1. Receive → count = 1 → visibility timeout
+                        → không delete → hết timeout → quay lại queue
+
+                        2. Receive → count = 2 → visibility timeout
+                        → không delete → hết timeout → quay lại queue
+
+                        ...
+
+                        n. Receive → count = n → visibility timeout
+                        → không delete → hết timeout → quay lại queue
+
+                        💥 n+1. Receive attempt → count = n+1
+                        → vượt maxReceiveCount
+                        👉 chuyển sang DLQ NGAY (không deliver cho consumer nữa)
+                
+                    - Nếu KHÔNG, chờ hết Long polling wait time rồi trả empty message cho consumer.
+                ```
+
+                </details>
+
         - [SQS Limitation](#sqs-limitation)
         - [Các thông số monitor trong Cloudwatch của SQS](#một-số-thông-số-liên-quan-monitor)
         - [Usecase](#sqs-usecase)
