@@ -5,7 +5,7 @@
 ## MỤC LỤC
 
 - [Lí thuyết](#lí-thuyết)
-    - [SQS](#sqs)
+    - [Simple Queue Service - SQS](#sqs)
         - [Định nghĩa](#sqs---định-nghĩa): là một **dịch vụ hàng đợi thông điệp** mạnh mẽ và dễ sử dụng từ AWS, có **2 loại queue**: **Standard queue** và **FIFO queue**.
         - [Đặc trưng](#đặc-trưng-của-sqs): là một **managed service nên bạn không quản lý hạ tầng phía sau**. *Lưu ý với StandQ, phải tự xóa message sau khi xử lí.*
         - [Thông số](#thông-số-trong-sqs) (Xem **ví dụ trực quan** về các thông số **`Visibility Timeout`/ `Receive count`/ `Long polling wait time`**)
@@ -43,8 +43,11 @@
         - [Các thông số monitor trong Cloudwatch của SQS](#một-số-thông-số-liên-quan-monitor)
         - [Usecase](#sqs-usecase)
         - [Pricing](#sqs-pricing): **Zero idle cost**.
-    - [SNS](#sns)
-    - [SES](#ses)
+    - [Simple Notification Service - SNS](#sns)
+        - [Định nghĩa](#sns---định-nghĩa): dịch vụ **notification cho phép bạn gửi thông báo đến các đối tượng khác nhau**.
+        - [Đặc trưng của SNS](#đặc-trưng-của-sns)
+        - [Pricing](#sns-pricing)
+    - [Simple Email Service - SES](#ses)
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
@@ -178,25 +181,63 @@ Về cơ bản SQS tính tiền theo
 - Dữ liệu truyền từ SQS đi ra: $0.12 /GB
 - **Zero idle cost.**
 
+<br><br><br><br>
+
 ### **SNS**
 <!-- Thêm lí thuyết SQS vào sau dòng này -->
 
+#### **SNS - Định nghĩa**
+- AWS Simple Notification Service (SNS) **là một dịch vụ notification cho phép bạn gửi thông báo đến các đối tượng khác nhau** như các ứng dụng, user, hệ thống, hoặc các dịch vụ khác trên AWS.
+- SNS cho phép bạn **gửi thông báo bằng nhiều phương thức khác nhau** như email, SMS, push notifications, hoặc API Call. 
+
+    Bạn có thể **`Tạo và quản lý các topics trong SNS` - `Sau đó gửi thông báo đến các topics đó` - `Đối tượng đã đăng ký (subscribed) vào chủ đề sẽ nhận được thông báo`**.
+
+#### **Đặc trưng của SNS**
+
+- Về cơ bản SNS hoạt động theo mô hình Publisher-Subscriber, message khi được bên publisher gửi lên SNS topic sẽ được đồng loạt gửi tới các subscriber.
+- Đa kênh thông báo: SNS hỗ trợ nhiều kênh thông báo như email, SMS, push notifications (như thông báo trên mobile), và API call. 
+- Khả năng mở rộng và đáng tin cậy: SNS xử lý việc phân phối thông báo trên cơ sở hạ tầng mở rộng của AWS. Nó tự động xử lý khả năng mở rộng và đảm bảo tính đáng tin cậy của việc gửi thông báo.
+- Tích hợp với các dịch vụ AWS khác: SNS tích hợp tốt với các dịch vụ AWS khác như SQS, CloudWatch, AWS Lambda, Amazon EC2, và nhiều dịch vụ khác. Điều này cho phép bạn xây dựng các hệ thống phức tạp và tự động hóa quá trình gửi thông báo.
 
 
-
-
-
-
+#### SNS Pricing
+- Cost cho việc gửi notification.
+- Mobile push: $0.5 per 1M notification.
+- Email: $1 per 1M notification.
+- HTTP: $0.6 per 1M notification.
+- Data transfer.
+- Transfer in: Free.
+- Transfer out: $0.12/GB.
+- Chi phí cho SMS: tuỳ thuộc vào quốc gia.
+- Message filter: $0.11/ GB payload data được scan.
 
 
 <!-- Thêm lí thuyết SQS vào trước dòng này -->
 
-
+<br><br><br><br>
 
 ### **SES**
 <!-- Thêm lí thuyết SES vào sau dòng này -->
 
+#### **SES - Định nghĩa**
 
+Simple Email Service (SES) là **một dịch vụ email** được cung cấp bởi Amazon Web Services (AWS) **để gửi và nhận email đáng tin cậy và có hiệu suất cao**.
+
+#### **Các tính năng của SES**
+
+- **Gửi email**: SES cho phép bạn gửi email từ ứng dụng hoặc hạ tầng đám mây của bạn thông qua giao thức SMTP (Simple Mail Transfer Protocol). 
+- **Quản lý danh sách người nhận**: SES cho phép bạn quản lý và lưu trữ danh sách người nhận email của bạn. 
+- **Xác thực và bảo mật**: SES **cung cấp các tính năng xác thực và bảo mật** để email bạn nhận **đảm bảo được gửi từ nguồn đáng tin cậy và không bị làm giả mạo**. Điều này bao gồm xác thực thông qua DKIM (DomainKeys Identified Mail), SPF (Sender Policy Framework) và DMARC (Domain-based Message Authentication, Reporting, and Conformance).
+- **Ghi lại hoạt động**: SES cung cấp các **log chi tiết về hoạt động gửi email, bao gồm thông tin về người gửi, người nhận, thời gian gửi và kết quả gửi**. Bạn có thể sử dụng dữ liệu này để theo dõi và phân tích hiệu suất gửi email.
+
+- SES có thể được **tích hợp với các dịch vụ khác trong mạng lưới AWS**, như Lambda, S3 và SNS, để tự động hóa quy trình gửi email và xử lý các hành động phản hồi từ người nhận.
+    - *Lưu ý rằng SES chủ yếu là dịch vụ gửi email và có giới hạn về tính năng nhận email. Nếu bạn cần chức năng đầy đủ để nhận và xử lý email, bạn có thể xem xét sử dụng dịch vụ như Amazon Simple Notification Service (SNS) hoặc Amazon WorkMail.*
+
+#### **SES Pricing**
+
+- **Số lượng email**: $0.1/1000 email.
+- **File đính kèm**: $0.12/1GB attachment.
+- Ngoài ra SES còn tính phí thêm cho các option như Dedicated IP, Virtual Deliverability Manager.
 
 
 
@@ -256,6 +297,6 @@ Về cơ bản SQS tính tiền theo
 
 - Nội dung phục vụ lab: [Code](/labs/sec_19)
 - AWS Console liên quan:
-    - [SNS](/aws_console/README.md#sns)
     - [SQS](/aws_console/README.md#sqs)
+    - [SNS](/aws_console/README.md#sns)
     - [SES](/aws_console/README.md#ses)
