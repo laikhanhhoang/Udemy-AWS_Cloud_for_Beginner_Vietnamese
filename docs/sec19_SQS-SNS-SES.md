@@ -14,7 +14,7 @@
             - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
             -
                 <details>
-                <summary><strong>Workflow đâỳ đủ của SQS với các thông số trên</strong></summary>
+                <summary><strong>Workflow đầy đủ của SQS với các thông số trên</strong></summary>
 
                 ```
                 Consumer gọi ReceiveMessage → SQS KHÔNG TRẢ NGAY → đợi tối đa X giây (long polling wait time)
