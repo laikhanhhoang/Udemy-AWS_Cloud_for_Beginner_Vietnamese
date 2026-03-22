@@ -11,7 +11,7 @@
         - [Thông số](#thông-số-trong-sqs) (Xem **ví dụ trực quan** về các thông số **`Visibility Timeout`/ `Receive count`/ `Long polling wait time`**)
             - **Visibility Timeout**: **thời gian message tạm bị ẩn đi với các consumer khác trong khi được receive bởi một consumer nào đó**. Quá thời gian này nếu **message chưa bị xoá** sẽ quay trở lại queue. 
             - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**, dùng để setting **Dead-letter Queue**.
-            - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty nếu queue không có message.
+            - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
     - [SNS](#sns)
     - [SES](#ses)
 - [Lab](#lab)
@@ -76,8 +76,11 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
         </p>
 
 
-- **Long polling wait time**: **thời gian SQS đợi trước khi return empty cho consumer** trong trường hợp **không có message nào trên queue**.
+- **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
 
+    <p align="center">
+        <img src = "docs_imgs\sqs_long_polling_wait_time.png" width="650">
+    </p>
 
 - **Workflow đầy đủ của SQS** có **Visibility Timeout**, **Receive count** và **Long polling wait time** đối với một message:
 
