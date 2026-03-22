@@ -38,6 +38,10 @@
 
 - [Route 53](#route-53) **KHÔNG HỖ TRỢ VỚI ACC FREE TIER**
 
+- [CloudWatch](#cloudwatch)
+
+- [CloudTrail](#cloudtrail)
+
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
@@ -462,8 +466,24 @@ Không có thao tác đặc biệt
 
 
 
-## Route 53
+## **Route 53**
 
 **KHÔNG HỖ TRỢ ACC FREE TIER**
+
+
+
+
+
+
+
+
+## **CloudWatch**
+
+
+
+
+
+
+## **CloudTrail**
 
 

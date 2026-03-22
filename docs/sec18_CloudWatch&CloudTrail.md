@@ -31,7 +31,10 @@
     
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
-
+    - Nội dung phục vụ lab: [Code](/labs/sec_18)
+    - AWS Console liên quan:
+        - [CloudWatch](/aws_console/README.md#cloudwatch)
+        - [CloudTrail](/aws_console/README.md#cloudtrail)
 
 ## <div align="center"><strong>LÍ THUYẾT</strong></div>
 
@@ -367,7 +370,7 @@ phân tích dữ liệu log theo nhu cầu.
 
 ## <div align="center"><strong>TÀI LIỆU BỔ SUNG</strong></div>
 
-- Nội dung phục vụ lab: [Code](/labs/sec_)
+- Nội dung phục vụ lab: [Code](/labs/sec_18)
 - AWS Console liên quan:
-    - [Dịch vụ 1](/aws_console/README.md#tên-dịch-vụ-1)
-    - [Dịch vụ 2](/aws_console/README.md#tên-dịch-vụ-2)
+    - [CloudWatch](/aws_console/README.md#cloudwatch)
+    - [CloudTrail](/aws_console/README.md#cloudtrail)

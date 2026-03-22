@@ -2,7 +2,26 @@
 
 Đây là repo cho khóa học về AWS cơ bản trên Udemy.
 
+Nội dung file **`README.md`**:
+- [**Mục lục**](#mục-lục)
+- [**Tóm tắt nội dung từng Section**](#tóm-tắt-nội-dung-từng-section)
+- [**Kiến thức bổ sung**](#kiến-thức-bổ-sung)
+
 ## Mục lục
+- [Section 07 - EC2](docs/sec07_EC2.md)
+- [Section 08 - IAM](docs/sec08_IAM.md)
+- [Section 09 - S3](docs/sec09_S3.md)
+- [Section 10 - ELB & ASG](docs/sec10_ELB&ASG.md)
+- [Section 11 - RDS](docs/sec11_RDS.md)
+- [Section 12 - DynamoDB](docs/sec12_DynamoDB.md)
+- [Section 13 - Lambda](docs/sec13_Lambda.md)
+- [Section 14 - VPC](docs/sec14_VPC.md)
+- [Section 15 - API Gateway & Cognito](docs/sec15_APIGW&Cognito.md)
+- [Section 16 - CloudFront](docs/sec16_CloudFront.md)
+- [Section 17 - Route 53](docs/sec17_Route53.md)
+- [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md)
+
+## Tóm tắt nội dung từng Section
 
 - [Section 07 - EC2](docs/sec07_EC2.md)
 
@@ -12,7 +31,7 @@
 - [Section 08 - IAM](docs/sec08_IAM.md)
     - [Policy](docs/sec08_IAM.md#policy): quy định việc ai/cái gì có thể hoặc không thể làm gì.
     - [User](docs/sec08_IAM.md#user): dại diện cho 1 profile của 1 người dùng trên AWS account.
-    - [Role](docs/sec08_IAM.md#role): cấp quyền cho 1 thực thể có thể tương tác với các resources khác trên AWS
+    - [Role](docs/sec08_IAM.md#role): cấp quyền cho 1 thực thể có thể tương tác với các resources khác trên AWS.
     - [Group](docs/sec08_IAM.md#group): đại diện cho 1 nhóm user trên hệ thống.
 
 
@@ -33,8 +52,13 @@
         - "Single point of failure" - Sự ra đời của Load Balancer
         - [Elastic Load Balancing - Định nghĩa](docs/sec10_ELB&ASG.md#elastic-load-balancing---định-nghĩa)
         - [Các thành phần cơ bản của Load Balancer](docs/sec10_ELB&ASG.md#các-thành-phần-cơ-bản-của-load-balancer)
-        - [Các loại Load Balancer](docs/sec10_ELB&ASG.md#các-loại-load-balancer)
+        - [Các loại Load Balancer](docs/sec10_ELB&ASG.md#các-loại-load-balancer): Application Load Balancer, Network Load Balancer, Gateway Load Balancer.
         - [Cách Load Balancer hoạt động](docs/sec10_ELB&ASG.md#cách-load-balancer-hoạt-động)
+
+            <p align="center">
+                <img src="docs\docs_imgs\elb_theory.png" width="500" />
+            </p>
+
         - [Load Balancer tính phí như thế nào?](docs/sec10_ELB&ASG.md#load-balancer-pricing)
         - [Cross zone load balancer](docs/sec10_ELB&ASG.md#cross-zone-load-balancer)
         - [Một số lưu ý về Load Balancer](docs/sec10_ELB&ASG.md#một-số-lưu-ý-về-load-balancer)
@@ -145,6 +169,35 @@
     - [Pricing](docs/sec17_Route53.md#pricing)
     - [Lưu ý](docs/sec17_Route53.md#lưu-ý)
     - AWS Console liên quan: [Route 53](/aws_console/README.md#route-53).
+
+- [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md)
+    - [Cloudwatch](#cloudwatch)
+        - [Cloudwatch - Định nghĩa](#cloudwatch---định-nghĩa): **giám sát và quản lý hệ thống và ứng dụng trên nền tảng AWS**.
+        - [Các thành phần của Cloudwatch](#các-thành-phần-của-cloudwatch)
+            - [Cloudwatch Metrics](#cloudwatch-metrics): **các thông số đo lường được thu thập và lưu trữ bởi CloudWatch**.
+            - [Cloudwatch Alarm](#cloudwatch-alarm): **tạo ra cảnh báo tự động dựa trên các giá trị và threshold trong Metrics**.
+            - [Cloudwatch Log](#cloudwatch-log): **lưu trữ, xem và phân tích các logs từ các ứng dụng và hệ thống trong môi trường AWS cũng như on-premise**. 
+
+                &nbsp;&nbsp;&nbsp;&nbsp; *Cách **phân biệt Log và Metric** xem ở **Lưu ý**.*
+
+            - [Cloudwatch Log Insight](#cloudwatch-log-insight): **một công cụ cho phép bạn truy vấn log thông qua một cú pháp do AWS định nghĩa**.
+            - [Cloudwatch Insight](#cloudwatch-insight)
+            - [Xray](#xray): cung cấp cái nhìn toàn cảnh và chi tiết đường đi của request trong application.
+            - [Cloudwatch Dashboard](#cloudwatch-dashboard)
+            - [Setup Cloudwatch Agent cho Custom Metricks và intergrate vào Cloudwatch Dashboard](#setup-cloudwatch-agent-cho-custom-metric)
+                - Cách **phân biệt Metric và Log của từng Resource** trên Cloudwatch: dùng **namespace và dimension** với **metric**, **log group và log stream** cho **log**.
+                - Cách **cài và chạy Cloudwatch Agent**: **`Tạo Iam Policy cho EC2` → `Config metric&log agent setting` → `Fetch setting json và launch`**.
+            - [Lưu ý](#lưu-ý)
+                - Khi thiết kế monitor cần quan tâm những gì?
+                - Chú ý cho CW Alarm trong quá trình thiết kế và setting
+            - [Pricing](#pricing)
+        - [Cloudtrail](#cloudtrail)
+            - [Cloudtrail - Định nghĩa](#cloudtrail---định-nghĩa): **Khác với CloudWatch** có mục đích **giám sát tình trạng của resource**, **CloudTrail ghi lại những hành động đã được thực thi** trong môi trường AWS **(who did what?)**.
+            - [Các chức năng cơ bản của CloudTrail](#các-chức-năng-cơ-bản-của-cloudtrail)
+    - AWS Console liên quan:
+        - [CloudWatch](/aws_console/README.md#cloudwatch)
+        - [CloudTrail](/aws_console/README.md#cloudtrail)
+
 
 
 ## Kiến thức bổ sung
