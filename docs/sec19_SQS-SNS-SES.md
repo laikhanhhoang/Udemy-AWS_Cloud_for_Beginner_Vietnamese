@@ -11,7 +11,7 @@
         - [Thông số](#thông-số-trong-sqs) (Xem **ví dụ trực quan** về các thông số **`Visibility Timeout`/ `Receive count`/ `Long polling wait time`**)
             - **Visibility Timeout**: **thời gian message tạm bị ẩn đi với các consumer khác trong khi được receive bởi một consumer nào đó**. Quá thời gian này nếu **message chưa bị xoá** sẽ quay trở lại queue. 
             - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**, dùng để setting **Dead-letter Queue**.
-            - **Long polling wait time**: **thời gian SQS đợi trước khi return empty cho consumer** trong trường hợp **không có message nào trên queue**.
+            - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty nếu queue không có message.
     - [SNS](#sns)
     - [SES](#ses)
 - [Lab](#lab)
@@ -82,23 +82,24 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
 - **Workflow đầy đủ của SQS** có **Visibility Timeout**, **Receive count** và **Long polling wait time** đối với một message:
 
     ```
-    Khi có message:
-        1. Receive → count = 1 → visibility timeout
-        → không delete → hết timeout → quay lại queue
+    Consumer gọi ReceiveMessage → SQS KHÔNG TRẢ NGAY → đợi tối đa X giây (long polling wait time)
+        - Nếu CÓ message, trả message về NGAY cho consumer:
+            1. Receive → count = 1 → visibility timeout
+            → không delete → hết timeout → quay lại queue
 
-        2. Receive → count = 2 → visibility timeout
-        → không delete → hết timeout → quay lại queue
+            2. Receive → count = 2 → visibility timeout
+            → không delete → hết timeout → quay lại queue
 
-        ...
+            ...
 
-        n. Receive → count = n → visibility timeout
-        → không delete → hết timeout → quay lại queue
+            n. Receive → count = n → visibility timeout
+            → không delete → hết timeout → quay lại queue
 
-        💥 n+1. Receive attempt → count = n+1
-        → vượt maxReceiveCount
-        👉 chuyển sang DLQ NGAY (không deliver cho consumer nữa)
+            💥 n+1. Receive attempt → count = n+1
+            → vượt maxReceiveCount
+            👉 chuyển sang DLQ NGAY (không deliver cho consumer nữa)
     
-    Khi hết message, chờ hết Long polling wait time rồi gửi empty message cho consumer.
+        - Nếu KHÔNG, chờ hết Long polling wait time rồi trả empty message cho consumer.
     ```
 
 <!-- Thêm lí thuyết SNS vào trước dòng này -->
