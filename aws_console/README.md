@@ -13,6 +13,7 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
   <a href="#cloud-front">CloudFront</a>
   <a href="#cloudwatch">CloudWatch</a>
   <a href="#cloudtrail">CloudTrail</a>
+  <a href="#sqs">SQS</a>
 </p>
 
 ## Mục lục
@@ -56,6 +57,7 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
 - [CloudTrail](#cloudtrail)
 
 - [SQS](#sqs)
+    - [Tạo SQS Queue mới](#sqs---tạo-sqs-queue-mới)
 
 ## Elastic Load Balancer (ELB)
 
@@ -509,7 +511,7 @@ Không có thao tác đặc biệt
     <img src = "sqs/sqs_createqueue_success.png" width="800">
 </p>
 
-### Tạo SQS queue mới
+### SQS - Tạo SQS queue mới
 
 <p align="center">
     <img src = "sqs/sqs_createqueue_step01_pic01.png" width="1000">

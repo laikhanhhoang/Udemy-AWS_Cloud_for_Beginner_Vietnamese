@@ -13,6 +13,9 @@
             - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**, dùng để setting **Dead-letter Queue**.
             - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
         - [SQS Limitation](#sqs-limitation)
+        - [Các thông số monitor trong Cloudwatch của SQS](#một-số-thông-số-liên-quan-monitor)
+        - [Usecase](#sqs-usecase)
+        - [Pricing](#sqs-pricing): **Zero idle cost**.
     - [SNS](#sns)
     - [SES](#ses)
 - [Lab](#lab)
@@ -127,8 +130,26 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
 
 <!-- Thêm lí thuyết SNS vào trước dòng này -->
 
+#### **Một số thông số liên quan monitor**
+- **Approximage age of oldest message**: thời gian của message cũ nhất đã được gửi vào queue.
+- **Approximate number of message not visible**: Số lượng mesage đang được xử lý (in-flight) nên bị tạm ẩn khỏi queue.
+- **Approximate number of message visible**: Số lượng message chưa được xử lý.
+- **Number of message sent**: Số lượng message đã được gửi.
+- **Number of message received**: Số lượng message đã được nhận.
+- **Number of message deleted**: Số lượng message đã bị xoá.
 
 
+#### **SQS Usecase**
+- Đồng bộ dữ liệu giữa các hệ thống hoặc ứng dụng.
+- Xử lý hàng đợi, giúp de-coupling hệ thống và chống bottle neck tại những component có thể có workload tăng đột ngột. Giúp chuyển từ xử lý đồng bộ sang bất đồng bộ.
+- Hệ thống xử lý thời gian thực bằng cách sử dụng FIFO queue.
+- Data migration. Ví dụ data từ source cần được chia ra nhiều luồng xử lý bất đồng bộ và có phương pháp retry cũng như phân loại message lỗi.
+
+#### **SQS Pricing**
+Về cơ bản SQS tính tiền theo
+- Số lượng request gửi nhận. Khoảng **`$0.4/ 1 triệu request cho Standard`** và **`$0.5/ 1 triệu request cho FIFO`**  queue - tính theo block 64KB.
+- Dữ liệu truyền từ SQS đi ra: $0.12 /GB
+- **Zero idle cost.**
 
 ### **SNS**
 <!-- Thêm lí thuyết SQS vào sau dòng này -->
