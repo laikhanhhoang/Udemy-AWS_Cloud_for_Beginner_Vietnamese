@@ -80,6 +80,8 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
 
     <p align="center">
         <img src = "docs_imgs\sqs_long_polling_wait_time.png" width="650">
+        <br>
+        <i>Lưu ý: Client trong ảnh chính là Consumer.</i> 
     </p>
 
 - **Workflow đầy đủ của SQS** có **Visibility Timeout**, **Receive count** và **Long polling wait time** đối với một message:
