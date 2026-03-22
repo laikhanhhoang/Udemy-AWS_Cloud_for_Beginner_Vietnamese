@@ -2,6 +2,19 @@
     <strong>AWS CONSOLE</strong>
 </h1>
 
+Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
+
+<p align="center">
+  <a href="#virtual-private-cloud-vpc">VPC</a>
+  <a href="#elastic-load-balancer-elb">ELB</a>
+  <a href="#auto-scaling-groups">ASG</a>
+  <a href="#lambda">Lambda</a>
+  <a href="#api-gateway">API Gateway</a>
+  <a href="#cloud-front">CloudFront</a>
+  <a href="#cloudwatch">CloudWatch</a>
+  <a href="#cloudtrail">CloudTrail</a>
+</p>
+
 ## Mục lục
 
 - [Elastic Load Balancer (ELB)](#elastic-load-balancer-elb)
