@@ -77,6 +77,8 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
 
         <p align="center">
             <img src = "docs_imgs\sqs_dead_letter_queue.png" width="600">
+            <br>
+            <i>Receive count - Dead-letter queue</i> 
         </p>
 
 
