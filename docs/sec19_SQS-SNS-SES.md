@@ -8,7 +8,7 @@
     - [SQS](#sqs)
         - [Định nghĩa](#sqs---định-nghĩa): là một **dịch vụ hàng đợi thông điệp** mạnh mẽ và dễ sử dụng từ AWS, có **2 loại queue**: **Standard queue** và **FIFO queue**.
         - [Đặc trưng](#đặc-trưng-của-sqs): là một **managed service nên bạn không quản lý hạ tầng phía sau**. *Lưu ý với StandQ, phải tự xóa message sau khi xử lí.*
-        - [Thông số](#thông-số-trong-sqs) (Gồm các **ví dụ trực quan** về các thông số)
+        - [Thông số](#thông-số-trong-sqs) (Xem **ví dụ trực quan** về các thông số **`Visibility Timeout`/ `Receive count`/ `Long polling wait time`**)
             - **Visibility Timeout**: **thời gian message tạm bị ẩn đi với các consumer khác trong khi được receive bởi một consumer nào đó**. Quá thời gian này nếu **message chưa bị xoá** sẽ quay trở lại queue. 
             - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**, dùng để setting **Dead-letter Queue**.
             - **Long polling wait time**: **thời gian SQS đợi trước khi return empty cho consumer** trong trường hợp **không có message nào trên queue**.
