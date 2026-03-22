@@ -77,6 +77,7 @@ Nội dung file **`README.md`**:
 - [Section 16 - CloudFront](docs/sec16_CloudFront.md)
 - [Section 17 - Route 53](docs/sec17_Route53.md)
 - [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md)
+- [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md)
 
 ## Tóm tắt nội dung từng Section
 
