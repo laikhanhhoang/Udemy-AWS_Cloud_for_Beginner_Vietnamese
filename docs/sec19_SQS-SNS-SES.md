@@ -12,6 +12,7 @@
             - **Visibility Timeout**: **thời gian message tạm bị ẩn đi với các consumer khác trong khi được receive bởi một consumer nào đó**. Quá thời gian này nếu **message chưa bị xoá** sẽ quay trở lại queue. 
             - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**, dùng để setting **Dead-letter Queue**.
             - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
+        - [SQS Limitation](#sqs-limitation)
     - [SNS](#sns)
     - [SES](#ses)
 - [Lab](#lab)
@@ -113,6 +114,17 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
         - Nếu KHÔNG, chờ hết Long polling wait time rồi trả empty message cho consumer.
     ```
 
+#### **SQS Limitation**
+- **Số lượng message trên một queue**: **unlimited**.
+- Queue name: 80 characters.
+- Queue tag: 50 tags.
+- Long polling: 20s.
+- Message Visibility Timeout: min: 0s, max: 12 hours.
+- Message size max: 256KB.
+- Message attributes: 10 metadata attributes.
+- **Message content**: **có thể bao gồm XML, Json, Text**.
+- Message retention: default 4 days - min 1 mininutes - max 14 days.
+
 <!-- Thêm lí thuyết SNS vào trước dòng này -->
 
 
@@ -170,17 +182,25 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
 
 ## <div align="center"><strong>LAB</strong></div>
 
-<details>
-<summary>&nbsp;&nbsp;<strong>Lab 01</strong></summary>
+
+<strong>Lab 01 & 02 - SQS </strong>
 <!-- Thêm lab vào sau dòng này -->
 
+<p align="center">
+    <img src = "docs_imgs\sqs_lab01.png" width="500">
+</p>
+
+
+<p align="center">
+    <img src = "docs_imgs\sqs_lab02.png" width="500">
+</p>
 
 
 
 
 
 <!-- Thêm lab vào trước dòng này -->
-</details> 
+ 
 
 <br><br><br><br><br>
 

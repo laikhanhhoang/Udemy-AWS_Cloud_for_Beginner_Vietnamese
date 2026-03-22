@@ -55,6 +55,8 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
 
 - [CloudTrail](#cloudtrail)
 
+- [SQS](#sqs)
+
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
@@ -500,3 +502,46 @@ Không có thao tác đặc biệt
 ## **CloudTrail**
 
 
+
+## **SQS**
+
+<p align="center">
+    <img src = "sqs/sqs_createqueue_success.png" width="800">
+</p>
+
+### Tạo SQS queue mới
+
+<p align="center">
+    <img src = "sqs/sqs_createqueue_step01_pic01.png" width="1000">
+    <p style="text-align: center;">
+        <span style="display: inline-block; text-align: left;">
+            <i><strong>Visibility Timeout</strong>: thời gian message tạm bị ẩn đi với các consumer khác trong khi được receive bởi một consumer nào đó</i> 
+            <br>
+            <i><strong>Delivery Delay</strong>: thời gian message phải chờ trong queue trước được gửi cho consumer</i>
+            <br>
+            <i><strong>Message Retention Speed</strong>: thời gian 1 message được lưu trong queue trước khi bị xóa tự động</i>
+            <br>
+            <i><strong>Receive message waiting time</strong>: Long polling wait time</i>
+        </span>
+    </p>
+</p>
+
+<p align="center">
+    <img src = "sqs/sqs_createqueue_step01_pic02.png" width="1000">
+    <br>
+    <i>Setting Policy và Dead-letter queue</i>
+</p>
+
+
+<p align="center">
+    <img src = "sqs/sqs_createqueue_success.png" width="1000">
+    <br>
+    <i>Tạo queue thành công!!! Dùng <strong>Purge</strong> để xóa tất cả message trong queue (Dev Stage), <strong>Delete</strong> để xóa hẳn queue</i>
+</p>
+
+
+<p align="center">
+    <img src = "sqs/sqs_testing_create_send_polling_message.png" width="1000">
+    <br>
+    <i>Testing message</i>
+</p>
