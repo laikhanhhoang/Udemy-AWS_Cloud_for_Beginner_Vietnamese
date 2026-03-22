@@ -60,11 +60,15 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
     - *Ví dụ: một tác vụ xử lý **decode một video mất 10 mins** thì bạn nên để **`Visibility Timeout > 10 phút`** để **tránh tình trạng xung đột xử lý giữa các consumers**.*
 
         <p align="center">
-            <img src = "docs_imgs\sqs_consumer_conflict_no_timeout.png" width="500">
+            <img src = "docs_imgs\sqs_consumer_conflict_no_timeout.png" width="600">
+            <br>
+            <i>Timeout quá ngắn.</i> 
         </p>
 
         <p align="center">
-            <img src = "docs_imgs\sqs_consumer_conflict.png" width="500">
+            <img src = "docs_imgs\sqs_consumer_conflict.png" width="600">
+            <br>
+            <i>Timeout hợp lí.</i> 
         </p>
 
 - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**. 
@@ -72,14 +76,14 @@ Simple Queue Service (SQS) là một **dịch vụ hàng đợi thông điệp**
     - *Ví dụ: hình dưới ta có 2 queue, apply dead-letter queue với receive count = 5, khi tới ngưỡng giới hạn mà message vẫn chưa được xử lý thành công và xoá khỏi queue, ta sẽ move sang một queue khác (dead-letter queue) để xử lý sau.*
 
         <p align="center">
-            <img src = "docs_imgs\sqs_dead_letter_queue.png" width="500">
+            <img src = "docs_imgs\sqs_dead_letter_queue.png" width="600">
         </p>
 
 
 - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
 
     <p align="center">
-        <img src = "docs_imgs\sqs_long_polling_wait_time.png" width="650">
+        <img src = "docs_imgs\sqs_long_polling_wait_time.png" width="720">
         <br>
         <i>Lưu ý: Client trong ảnh chính là Consumer.</i> 
     </p>
