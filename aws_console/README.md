@@ -545,3 +545,9 @@ Không có thao tác đặc biệt
     <br>
     <i>Testing message</i>
 </p>
+
+<p align="center">
+    <img src = "sqs/sqs_monitor.png" width="1000">
+    <br>
+    <i>Monitoring message</i>
+</p>
