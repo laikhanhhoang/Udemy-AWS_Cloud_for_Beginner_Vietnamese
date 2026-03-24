@@ -15,6 +15,8 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
   <a href="#cloudtrail">CloudTrail</a>
   <a href="#sqs">SQS</a>
   <a href="#sns">SNS</a>
+  <a href="#eventbridge">EventBridge</a>
+  
 </p>
 
 ## Mục lục
@@ -63,6 +65,8 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
 - [SNS](#sns)
     - [Tạo Subscriber và gửi Message đơn giản](#sns---tạo-subscriber-và-gửi-message-đơn-giản)
     - [Tạo Lambda Subscriber với Attribute Filter và gửi Message](#sns---tạo-lambda-subscriber-với-attribute-filter-và-gửi-message)
+
+- [Event Bridge](#eventbridge)
 
 ## Elastic Load Balancer (ELB)
 
@@ -663,3 +667,4 @@ Không có thao tác đặc biệt
 
 
 
+## **EventBridge**
