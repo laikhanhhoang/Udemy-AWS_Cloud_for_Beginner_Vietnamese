@@ -53,6 +53,11 @@
         - [Pricing](#ses-pricing)
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
+    - Nội dung phục vụ lab: [Code](/labs/sec_19)
+    - AWS Console liên quan:
+        - [SQS](/aws_console/README.md#sqs)
+        - [SNS](/aws_console/README.md#sns)
+        - [SES](/aws_console/README.md#ses)
 
 
 ## <div align="center"><strong>LÍ THUYẾT</strong></div>

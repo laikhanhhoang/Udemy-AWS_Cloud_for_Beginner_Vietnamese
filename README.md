@@ -229,35 +229,85 @@ Nội dung file **`README.md`**:
     - AWS Console liên quan: [Route 53](/aws_console/README.md#route-53).
 
 - [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md)
-    - [Cloudwatch](#cloudwatch)
-        - [Cloudwatch - Định nghĩa](#cloudwatch---định-nghĩa): **giám sát và quản lý hệ thống và ứng dụng trên nền tảng AWS**.
-        - [Các thành phần của Cloudwatch](#các-thành-phần-của-cloudwatch)
-            - [Cloudwatch Metrics](#cloudwatch-metrics): **các thông số đo lường được thu thập và lưu trữ bởi CloudWatch**.
-            - [Cloudwatch Alarm](#cloudwatch-alarm): **tạo ra cảnh báo tự động dựa trên các giá trị và threshold trong Metrics**.
-            - [Cloudwatch Log](#cloudwatch-log): **lưu trữ, xem và phân tích các logs từ các ứng dụng và hệ thống trong môi trường AWS cũng như on-premise**. 
+    - [Cloudwatch](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch)
+        - [Cloudwatch - Định nghĩa](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch---định-nghĩa): **giám sát và quản lý hệ thống và ứng dụng trên nền tảng AWS**.
+        - [Các thành phần của Cloudwatch](docs/sec18_CloudWatch&CloudTrail.md#các-thành-phần-của-cloudwatch)
+            - [Cloudwatch Metrics](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch-metrics): **các thông số đo lường được thu thập và lưu trữ bởi CloudWatch**.
+            - [Cloudwatch Alarm](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch-alarm): **tạo ra cảnh báo tự động dựa trên các giá trị và threshold trong Metrics**.
+            - [Cloudwatch Log](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch-log): **lưu trữ, xem và phân tích các logs từ các ứng dụng và hệ thống trong môi trường AWS cũng như on-premise**. 
 
                 &nbsp;&nbsp;&nbsp;&nbsp; *Cách **phân biệt Log và Metric** xem ở **Lưu ý**.*
 
-            - [Cloudwatch Log Insight](#cloudwatch-log-insight): **một công cụ cho phép bạn truy vấn log thông qua một cú pháp do AWS định nghĩa**.
-            - [Cloudwatch Insight](#cloudwatch-insight)
-            - [Xray](#xray): cung cấp cái nhìn toàn cảnh và chi tiết đường đi của request trong application.
-            - [Cloudwatch Dashboard](#cloudwatch-dashboard)
-            - [Setup Cloudwatch Agent cho Custom Metricks và intergrate vào Cloudwatch Dashboard](#setup-cloudwatch-agent-cho-custom-metric)
+            - [Cloudwatch Log Insight](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch-log-insight): **một công cụ cho phép bạn truy vấn log thông qua một cú pháp do AWS định nghĩa**.
+            - [Cloudwatch Insight](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch-insight)
+            - [Xray](docs/sec18_CloudWatch&CloudTrail.md#xray): cung cấp cái nhìn toàn cảnh và chi tiết đường đi của request trong application.
+            - [Cloudwatch Dashboard](docs/sec18_CloudWatch&CloudTrail.md#cloudwatch-dashboard)
+            - [Setup Cloudwatch Agent cho Custom Metricks và intergrate vào Cloudwatch Dashboard](docs/sec18_CloudWatch&CloudTrail.md#setup-cloudwatch-agent-cho-custom-metric)
                 - Cách **phân biệt Metric và Log của từng Resource** trên Cloudwatch: dùng **namespace và dimension** với **metric**, **log group và log stream** cho **log**.
                 - Cách **cài và chạy Cloudwatch Agent**: **`Tạo Iam Policy cho EC2` → `Config metric&log agent setting` → `Fetch setting json và launch`**.
-            - [Lưu ý](#lưu-ý)
+            - [Lưu ý](docs/sec18_CloudWatch&CloudTrail.md#lưu-ý)
                 - Khi thiết kế monitor cần quan tâm những gì?
                 - Chú ý cho CW Alarm trong quá trình thiết kế và setting
-            - [Pricing](#pricing)
-        - [Cloudtrail](#cloudtrail)
-            - [Cloudtrail - Định nghĩa](#cloudtrail---định-nghĩa): **Khác với CloudWatch** có mục đích **giám sát tình trạng của resource**, **CloudTrail ghi lại những hành động đã được thực thi** trong môi trường AWS **(who did what?)**.
-            - [Các chức năng cơ bản của CloudTrail](#các-chức-năng-cơ-bản-của-cloudtrail)
+            - [Pricing](docs/sec18_CloudWatch&CloudTrail.md#pricing)
+        - [Cloudtrail](docs/sec18_CloudWatch&CloudTrail.md#cloudtrail)
+            - [Cloudtrail - Định nghĩa](docs/sec18_CloudWatch&CloudTrail.md#cloudtrail---định-nghĩa): **Khác với CloudWatch** có mục đích **giám sát tình trạng của resource**, **CloudTrail ghi lại những hành động đã được thực thi** trong môi trường AWS **(who did what?)**.
+            - [Các chức năng cơ bản của CloudTrail](docs/sec18_CloudWatch&CloudTrail.md#các-chức-năng-cơ-bản-của-cloudtrail)
     - AWS Console liên quan:
         - [CloudWatch](/aws_console/README.md#cloudwatch)
         - [CloudTrail](/aws_console/README.md#cloudtrail)
 
 
+- [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md) - [Console](/aws_console/README.md##sqs)
+    - [Simple Queue Service - SQS](docs/sec19_SQS-SNS-SES.md#sqs)
+        - [Định nghĩa](docs/sec19_SQS-SNS-SES.md#sqs---định-nghĩa): là một **dịch vụ hàng đợi thông điệp** mạnh mẽ và dễ sử dụng từ AWS, có **2 loại queue**: **Standard queue** và **FIFO queue**.
+        - [Đặc trưng](docs/sec19_SQS-SNS-SES.md#đặc-trưng-của-sqs): là một **managed service nên bạn không quản lý hạ tầng phía sau**. *Lưu ý với StandQ, phải tự xóa message sau khi xử lí.*
+        - [Thông số](docs/sec19_SQS-SNS-SES.md#thông-số-trong-sqs) (Xem **ví dụ trực quan** về các thông số **`Visibility Timeout`/ `Receive count`/ `Long polling wait time`**)
+            - **Visibility Timeout**: **thời gian message tạm bị ẩn đi với các consumer khác trong khi được receive bởi một consumer nào đó**. Quá thời gian này nếu **message chưa bị xoá** sẽ quay trở lại queue. 
+            - **Receive count**: **được cộng thêm 1 mỗi khi message được receive bởi một consumer**, dùng để setting **Dead-letter Queue**.
+            - **Long polling wait time**: thời gian mà Amazon SQS **giữ request ReceiveMessage mở để chờ message** trước khi trả về empty **cho consumer** nếu queue không có message.
+            -
+                <details>
+                <summary><strong>Workflow đầy đủ của SQS với các thông số trên</strong></summary>
 
+                ```
+                Consumer gọi ReceiveMessage → SQS KHÔNG TRẢ NGAY → đợi tối đa X giây (long polling wait time)
+                    - Nếu CÓ message, trả message về NGAY cho consumer:
+                        1. Receive → count = 1 → visibility timeout
+                        → không delete → hết timeout → quay lại queue
+
+                        2. Receive → count = 2 → visibility timeout
+                        → không delete → hết timeout → quay lại queue
+
+                        ...
+
+                        n. Receive → count = n → visibility timeout
+                        → không delete → hết timeout → quay lại queue
+
+                        💥 n+1. Receive attempt → count = n+1
+                        → vượt maxReceiveCount
+                        👉 chuyển sang DLQ NGAY (không deliver cho consumer nữa)
+                
+                    - Nếu KHÔNG, chờ hết Long polling wait time rồi trả empty message cho consumer.
+                ```
+
+                </details>
+
+        - [SQS Limitation](docs/sec19_SQS-SNS-SES.md#sqs-limitation)
+        - [Các thông số monitor trong Cloudwatch của SQS](docs/sec19_SQS-SNS-SES.md#một-số-thông-số-liên-quan-monitor)
+        - [Usecase](docs/sec19_SQS-SNS-SES.md#sqs-usecase)
+        - [Pricing](docs/sec19_SQS-SNS-SES.md#sqs-pricing): **Zero idle cost**.
+    - [Simple Notification Service - SNS](docs/sec19_SQS-SNS-SES.md#sns)
+        - [Định nghĩa](docs/sec19_SQS-SNS-SES.md#sns---định-nghĩa): dịch vụ **notification cho phép bạn gửi thông báo đến các đối tượng khác nhau**.
+        - [Đặc trưng của SNS](docs/sec19_SQS-SNS-SES.md#đặc-trưng-của-sns)
+        - [Pricing](docs/sec19_SQS-SNS-SES.md#sns-pricing)
+    - [Simple Email Service - SES](docs/sec19_SQS-SNS-SES.md#ses)
+        - [Định nghĩa](docs/sec19_SQS-SNS-SES.md#ses---định-nghĩa): là **một dịch vụ email** được cung cấp bởi Amazon Web Services (AWS) **để gửi và nhận email đáng tin cậy và có hiệu suất cao**.
+        - [Các tính năng của SES](docs/sec19_SQS-SNS-SES.md#các-tính-năng-của-ses)
+        - [Pricing](docs/sec19_SQS-SNS-SES.md#ses-pricing)
+    - AWS Console liên quan:
+        - [SQS](/aws_console/README.md#sqs)
+        - [SNS](/aws_console/README.md#sns)
+        - [SES](/aws_console/README.md#ses)
 
 
 
