@@ -200,7 +200,7 @@ Về cơ bản SQS tính tiền theo
 - Tích hợp với các dịch vụ AWS khác: SNS tích hợp tốt với các dịch vụ AWS khác như SQS, CloudWatch, AWS Lambda, Amazon EC2, và nhiều dịch vụ khác. Điều này cho phép bạn xây dựng các hệ thống phức tạp và tự động hóa quá trình gửi thông báo.
 
 
-#### SNS Pricing
+#### **SNS Pricing**
 - Cost cho việc gửi notification.
 - Mobile push: $0.5 per 1M notification.
 - Email: $1 per 1M notification.

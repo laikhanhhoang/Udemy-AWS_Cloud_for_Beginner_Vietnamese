@@ -1,0 +1,37 @@
+#Filter for send to Lambda
+{
+    "sendTo":[
+        "LAMBDA"
+    ]
+}
+#Filter for send to SQS
+{
+    "sendTo":[
+        "SQS"
+    ]
+}
+
+{'Records': [{
+                'EventSource': 'aws:sns', 
+                'EventVersion': '1.0', 
+                'EventSubscriptionArn': 'arn:aws:sns:ap-southeast-2:445448906462:sec19_lab03_first-standard-ses:3a53cdb4-3775-4056-946d-36038de9a263', 
+                'Sns': {
+                        'Type': 'Notification', 
+                        'MessageId': '78b27ea7-a5a2-504d-bd12-1c9b37454f83', 
+                        'TopicArn': 'arn:aws:sns:ap-southeast-2:445448906462:sec19_lab03_first-standard-ses', 
+                        'Message': 'Very heplful Service!!', 
+                        'Timestamp': '2026-03-24T13:24:55.878Z', 
+                        'SignatureVersion': '1', 
+                        'Signature': 'j7/sRcvtfQmySwQhE1fXdoLyjE0dl4NI3xZb7hG+Gvu+GAPguqmilSN2d3MLcbnlWF0EOo2U9JhdlUy50ZvaZg+60tvC+r5GZ64r4kK6QFDGlAOUdrob66f6p2PwwTbhCP+pELSVnBoQL3tFgRU9JzcBiB0re9TahW4pZjdO85BRebKMmO+PlS8lLhAqz2Wm+8yIhtAQhiDQK55ilULCc7uiBWWCvtr4p6Vp5SMiNfdc03l0oWYascdk7cxcHSIkK7tSPUrqgbYh1StEbHX3m5miCCkr++xLsVOdumbUmF4e6DYJ/1VtAF/I+82I/mF4iON6B4C33+qPcjCR3GcYJA==', 
+                        'SigningCertUrl': 'https://sns.ap-southeast-2.amazonaws.com/SimpleNotificationService-7506a1e35b36ef5a444dd1a8e7cc3ed8.pem', 
+                        'Subject': '1st message to Lambda!!!', 
+                        'UnsubscribeUrl': 'https://sns.ap-southeast-2.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-southeast-2:445448906462:sec19_lab03_first-standard-ses:3a53cdb4-3775-4056-946d-36038de9a263', 
+                        'MessageAttributes':{
+                                                'sendTo': {
+                                                            'Type': 'String', 
+                                                            'Value': 'lamBDA'
+                                                            }
+                                            }
+                        }
+                }]
+}

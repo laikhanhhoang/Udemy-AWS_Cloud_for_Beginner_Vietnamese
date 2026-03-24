@@ -59,6 +59,10 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
 - [SQS](#sqs)
     - [Tạo SQS Queue mới](#sqs---tạo-sqs-queue-mới)
 
+- [SNS](#sns)
+    - [Tạo Subscriber và gửi Message đơn giản](#sns---tạo-subscriber-và-gửi-message-đơn-giản)
+    - [Tạo Lambda Subscriber với Attribute Filter và gửi Message](#sns---tạo-lambda-subscriber-với-attribute-filter-và-gửi-message)
+
 ## Elastic Load Balancer (ELB)
 
 <p align="center">
@@ -262,6 +266,11 @@ Không có thao tác đặc biệt
 <p align="center">
     <img src = "lambda/lambda_alias.png" width="1000">
 </p>
+
+- Ghi chú:
+    - Lambda alias trong Amazon Web Services là một tên định danh (pointer) trỏ tới một version cụ thể của Lambda function.
+    - ARN của các bản alias khác nhau: **`<function ARN>:<alias>`**.
+        - Ví dụ: **`arn:aws:lambda:ap-southeast-1:123456789012:function:my-function:prod`**.
 
 
 
@@ -550,3 +559,106 @@ Không có thao tác đặc biệt
     <br>
     <i>Monitoring message</i>
 </p>
+
+
+
+## **SNS**
+
+<p align="center">
+    <img src = "sns/sns_createtopic_success.png" width="800">
+</p>
+
+<p align="center">
+    <img src = "sns/sns_createtopic_step01_pic01.png" width="1000">
+    <br>
+    <i><strong>Tạo TOPIC</strong></i>
+</p>
+
+
+### SNS - Tạo Subscriber và gửi Message đơn giản
+
+- Tạo Email Subcriber đơn giản:
+
+<p align="center">
+    <img src = "sns/sns_addsubcriber_step01.png" width="1000">
+</p>
+
+- Gửi Message đơn giản:
+
+<p align="center">
+    <img src = "sns/sns_createsimplemessage.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "sns/sns_createsimplemessage_send_email_succesfully.png" width="1000">
+</p>
+
+
+### SNS - Tạo Lambda Subscriber với Attribute Filter và gửi Message 
+
+
+- Tạo Lambda Subscriber với Attribute Filter:
+
+<p align="center">
+    <img src = "sns/sns_addlambdasubcriber.png" width="1000">
+    <br>
+    <i>Message phải <strong>match tất cả các key</strong> của <strong>Subcription Filter Policy</strong> trong Subcriber, nhưng với <strong>từng key chỉ cần match <i>1 trong các</i> value đã khai báo</strong> để được gửi đến Subcriber tương ứng</i>
+</p>
+
+- Gửi Message:
+
+<p align="center">
+    <img src = "sns/sns_addlambdasubcriber_messagetesting.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "sns/sns_addlambdasubcriber_messagetesting_success.png" width="1000">
+    <br>
+    <i>Gửi message tới Lambda thành công</i>
+
+</p>
+
+<p align="center">
+    <img src = "sns/sns_message_from_sns_to_lambda.png" width="1000">
+    <br>
+    <i>Print Event input Lambda nhận được.</i> 
+
+
+
+</p>
+
+- Ghi chú:
+    - Event Input cụ thể của bài Lab bên trên:
+
+        ```json
+        {'Records': [{
+                        'EventSource': 'aws:sns', 
+                        'EventVersion': '1.0', 
+                        'EventSubscriptionArn': 'arn:aws:sns:ap-southeast-2:445448906462:sec19_lab03_first-standard-ses:xxx', 
+                        'Sns': {
+                                'Type': 'Notification', 
+                                'MessageId': '78b27ea7-a5a2-504d-bd12-1c9b37454f83', 
+                                'TopicArn': 'arn:aws:sns:ap-southeast-2:445448906462:sec19_lab03_first-standard-ses', 
+                                'Message': 'Very heplful Service!!', 
+                                'Timestamp': '2026-03-24T13:24:55.878Z', 
+                                'SignatureVersion': '1', 
+                                'Signature': 'xxx', 
+                                'Subject': '1st message to Lambda!!!', 
+                                'UnsubscribeUrl': 'xxx', 
+                                'MessageAttributes':{
+                                                        'sendTo': {
+                                                                    'Type': 'String', 
+                                                                    'Value': 'lamBDA'
+                                                                    }
+                                                    }
+                                }
+                        }]
+        }
+        ```
+
+    
+
+    - Message phải **match tất cả các key** của **Subcription Filter Policy** trong Subcriber, nhưng với **từng key chỉ cần match *1 trong các* value đã khai báo** sẽ được gửi đến Subcriber tương ứng.
+
+
+
