@@ -603,7 +603,7 @@ Không có thao tác đặc biệt
 <p align="center">
     <img src = "sns/sns_addlambdasubcriber.png" width="1000">
     <br>
-    <i>Message phải <strong>match tất cả các key</strong> của <strong>Subcription Filter Policy</strong> trong Subcriber, nhưng với <strong>từng key chỉ cần match <i>1 trong các</i> value đã khai báo</strong> để được gửi đến Subcriber tương ứng</i>
+    <i>Message phải <strong>có tất cả các key</strong> của <strong>Subcription Filter Policy</strong> trong Subcriber, nhưng với <strong>từng key chỉ cần match <i>1 trong các</i> value đã khai báo</strong> để được gửi đến Subcriber tương ứng</i>
 </p>
 
 - Gửi Message:
@@ -659,7 +659,7 @@ Không có thao tác đặc biệt
 
     
 
-    - Message phải **match tất cả các key** của **Subcription Filter Policy** trong Subcriber, nhưng với **từng key chỉ cần match *1 trong các* value đã khai báo** sẽ được gửi đến Subcriber tương ứng.
+    - Message phải **có tất cả các key** của **Subcription Filter Policy** trong Subcriber, nhưng với **từng key chỉ cần match *1 trong các* value đã khai báo** sẽ được gửi đến Subcriber tương ứng.
 
 
 
