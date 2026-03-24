@@ -78,7 +78,7 @@ Nội dung file **`README.md`**:
 - [Section 17 - Route 53](docs/sec17_Route53.md) - [Console](/aws_console/README.md#route-53)
 - [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md) - [Console](/aws_console/README.md#cloudwatch)
 - [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md) - [Console](/aws_console/README.md#sqs)
-- [Section 19 - EventBridge](docs/sec20_EventBridge.md) - [Console](/aws_console/README.md#eventbridge)
+- [Section 20 - EventBridge](docs/sec20_EventBridge.md) - [Console](/aws_console/README.md#eventbridge)
 
 ## Tóm tắt nội dung từng Section
 
