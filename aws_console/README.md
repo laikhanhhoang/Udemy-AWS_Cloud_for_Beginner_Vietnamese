@@ -14,6 +14,7 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
   <a href="#cloudwatch">CloudWatch</a>
   <a href="#cloudtrail">CloudTrail</a>
   <a href="#sqs">SQS</a>
+  <a href="#sns">SNS</a>
 </p>
 
 ## Mục lục
@@ -569,9 +570,9 @@ Không có thao tác đặc biệt
 </p>
 
 <p align="center">
-    <img src = "sns/sns_createtopic_step01_pic01.png" width="1000">
+    <i><strong>TẠO TOPIC</strong></i>
     <br>
-    <i><strong>Tạo TOPIC</strong></i>
+    <img src = "sns/sns_createtopic_step01_pic01.png" width="1000">
 </p>
 
 
