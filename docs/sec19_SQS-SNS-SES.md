@@ -48,6 +48,9 @@
         - [Đặc trưng của SNS](#đặc-trưng-của-sns)
         - [Pricing](#sns-pricing)
     - [Simple Email Service - SES](#ses)
+        - [Định nghĩa](#ses---định-nghĩa): là **một dịch vụ email** được cung cấp bởi Amazon Web Services (AWS) **để gửi và nhận email đáng tin cậy và có hiệu suất cao**.
+        - [Các tính năng của SES](#các-tính-năng-của-ses)
+        - [Pricing](#ses-pricing)
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
