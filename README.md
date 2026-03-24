@@ -65,19 +65,19 @@ Nội dung file **`README.md`**:
 </details>
 
 ## Mục lục
-- [Section 07 - EC2](docs/sec07_EC2.md)
-- [Section 08 - IAM](docs/sec08_IAM.md)
-- [Section 09 - S3](docs/sec09_S3.md)
-- [Section 10 - ELB & ASG](docs/sec10_ELB&ASG.md)
-- [Section 11 - RDS](docs/sec11_RDS.md)
-- [Section 12 - DynamoDB](docs/sec12_DynamoDB.md)
-- [Section 13 - Lambda](docs/sec13_Lambda.md)
-- [Section 14 - VPC](docs/sec14_VPC.md)
-- [Section 15 - API Gateway & Cognito](docs/sec15_APIGW&Cognito.md)
-- [Section 16 - CloudFront](docs/sec16_CloudFront.md)
-- [Section 17 - Route 53](docs/sec17_Route53.md)
-- [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md)
-- [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md)
+- [Section 07 - EC2](docs/sec07_EC2.md) 
+- [Section 08 - IAM](docs/sec08_IAM.md) 
+- [Section 09 - S3](docs/sec09_S3.md) 
+- [Section 10 - ELB & ASG](docs/sec10_ELB&ASG.md) - [Console](/aws_console/README.md#elastic-load-balancer-elb)
+- [Section 11 - RDS](docs/sec11_RDS.md) - [Console](/aws_console/README.md#relational-database-service-rds)
+- [Section 12 - DynamoDB](docs/sec12_DynamoDB.md) - [Console](/aws_console/README.md##dynamodb)
+- [Section 13 - Lambda](docs/sec13_Lambda.md) - [Console](/aws_console/README.md###lambda)
+- [Section 14 - VPC](docs/sec14_VPC.md) - [Console](/aws_console/README.md##virtual-private-cloud-vpc)
+- [Section 15 - API Gateway & Cognito](docs/sec15_APIGW&Cognito.md) - [Console](/aws_console/README.md##api-gateway)
+- [Section 16 - CloudFront](docs/sec16_CloudFront.md) - [Console](/aws_console/README.md###cloud-front)
+- [Section 17 - Route 53](docs/sec17_Route53.md) - [Console](/aws_console/README.md##route-53)
+- [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md) - [Console](/aws_console/README.md##cloudwatch)
+- [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md) - [Console](/aws_console/README.md##sqs)
 
 ## Tóm tắt nội dung từng Section
 
