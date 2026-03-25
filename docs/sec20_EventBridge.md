@@ -10,6 +10,9 @@
     - [Usecase](#usecase): EventBus, Pipes, Scheduler.
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
+    - Nội dung phục vụ lab: [Code](/labs/sec_20)
+    - AWS Console liên quan:
+        - [Event Bridge](/aws_console/README.md#eventbridge)
 
 
 ## <div align="center"><strong>LÍ THUYẾT</strong></div>

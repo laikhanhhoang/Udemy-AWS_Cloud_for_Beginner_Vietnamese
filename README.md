@@ -78,7 +78,7 @@ Nội dung file **`README.md`**:
 - [Section 17 - Route 53](docs/sec17_Route53.md) - [Console](/aws_console/README.md#route-53)
 - [Section 18 - CloudWatch & CloudTrail](docs/sec18_CloudWatch&CloudTrail.md) - [Console](/aws_console/README.md#cloudwatch)
 - [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md) - [Console](/aws_console/README.md#sqs)
-- [Section 20 - EventBridge](docs/sec20_EventBridge.md) - [Console](/aws_console/README.md#eventbridge)
+- [Section 20 - EventBridge](/docs/sec20_EventBridge.md) - [Console](/aws_console/README.md#eventbridge)
 - [Section 21 - Elastic Beanstalk](docs/sec21_ElasticBeanstalk.md) - [Console](/aws_console/README.md#elastic-beanstalk)
 
 ## Tóm tắt nội dung từng Section
@@ -312,18 +312,21 @@ Nội dung file **`README.md`**:
         - [SES](/aws_console/README.md#ses)
 
 
+- [Section 20 - EventBridge](/docs/sec20_EventBridge.md)
+    - [Định nghĩa](/docs/sec20_EventBridge.md#định-nghĩa): **là một dịch vụ dùng để quản lý và định tuyến sự kiện trong hệ thống hoạt động dựa trên kiến trúc publish-subscribe**.
+    - [Các thành phần của EventBridge](/docs/sec20_EventBridge.md#các-thành-phần-của-eventbridge): Event, Rule, Event Bus, Schema, Schema registry, Pipes, Scheduler.
+    - [Usecase](/docs/sec20_EventBridge.md#usecase): EventBus, Pipes, Scheduler.
+    - AWS Console liên quan: [Event Bridge](/aws_console/README.md#eventbridge)
 
 
 
 
-
-
-
-
-
-
-
-
+- [Section 21 - Elastic Beanstalk](/docs/sec21_ElasticBeanstalk.md) - [Console](/aws_console/README.md#elastic-beanstalk)
+    - [Định nghĩa](/docs/sec21_ElasticBeanstalk.md#định-nghĩa): là một dịch vụ được sử dụng để **triển khai, quản lý và mở rộng web app, web service một cách dễ dàng**, đóng vai trò như **một PaaS nơi bạn tập trung vào việc phát triển ứng dụng**.
+    - [Các tính năng của Elastic Beanstalk](/docs/sec21_ElasticBeanstalk.md#các-tính-năng-của-elastic-beanstalk)
+    - [Ưu/Nhược](/docs/sec21_ElasticBeanstalk.md#ưunhược): Chú yếu nằm ở việc **khó customise sâu**.
+    - [Usecase](/docs/sec21_ElasticBeanstalk.md#usecase): Backend đơn giản/Monopolith/Team chưa có nhiều kinh nghiệm với AWS.
+    - AWS Console liên quan: [Elastic Beanstalk](/aws_console/README.md#elastic-beanstalk)
 
 
 
