@@ -16,7 +16,7 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
   <a href="#sqs">SQS</a>
   <a href="#sns">SNS</a>
   <a href="#eventbridge">EventBridge</a>
-  
+  <a href="#elastic-beanstalk">Elastic Beanstalk</a>
 </p>
 
 ## Mục lục
@@ -70,6 +70,8 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
     - [Tạo Event Bus và định nghĩa Rule](#tạo-event-bus-và-định-nghĩa-rule)
         - [Tạo Event Bus](#tạo-event-bus)
         - [Định nghĩa Rule và testing event](#định-nghĩa-rule-và-testing-event)
+
+- [Elastic Beanstalk](#elastic-beanstalk)
 
 ## Elastic Load Balancer (ELB)
 
@@ -718,3 +720,27 @@ Không có thao tác đặc biệt
 <p align="center">
     <img src = "eventbridge/eventbridge_buses_sendevent_testing_success.png" width="1000">
 </p>
+
+
+<br><br><br><br>
+
+## Elastic Beanstalk
+<p align="center">
+    <img src = "truy_cap_service" width="800">
+</p>
+
+
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+<br>
+
+
+
