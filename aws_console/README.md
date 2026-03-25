@@ -17,6 +17,7 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
   <a href="#sns">SNS</a>
   <a href="#eventbridge">EventBridge</a>
   <a href="#elastic-beanstalk">Elastic Beanstalk</a>
+  <a href="#cloudformation">CloudFormation</a>
 </p>
 
 ## Mục lục
@@ -75,6 +76,14 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
     - [Tạo application Elastic Beanstalk đơn giản](#tạo-application-elastic-beanstalk-đơn-giản)
     - [Scale application Elastic Beanstalk single-instance lên ASG](#scale-application-elastic-beanstalk-single-instance-lên-asg)
     - [Blue-Green deployment với **`Swap environment domain`**](#blue-green-deployment-với-swap-environment-domain)
+
+
+- [CloudFormation](#cloudformation)
+
+
+
+
+
 ## Elastic Load Balancer (ELB)
 
 
@@ -820,5 +829,30 @@ Không có thao tác đặc biệt
 
 <br>
 
+
+
+
+
+
+
+## CloudFormation
+
+<p align="center">
+    <img src = "truy_cap_service" width="800">
+</p>
+
+
+
+### Thao tác
+
+
+
+<p align="center">
+    <img src = "link_tới_ảnh" width="1000">
+
+</p>
+
+
+<br>
 
 

@@ -81,6 +81,7 @@ Nội dung khóa học:
 - [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md) - [Console](/aws_console/README.md#sqs)
 - [Section 20 - EventBridge](/docs/sec20_EventBridge.md) - [Console](/aws_console/README.md#eventbridge)
 - [Section 21 - Elastic Beanstalk](docs/sec21_ElasticBeanstalk.md) - [Console](/aws_console/README.md#elastic-beanstalk)
+- [Section 23 - CloudFormation](docs/section23_CloudFormation.md) - [Console](/aws_console/README.md#cloudformation)
 
 ## Tóm tắt nội dung từng Section
 
