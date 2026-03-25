@@ -72,7 +72,8 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
         - [Định nghĩa Rule và testing event](#định-nghĩa-rule-và-testing-event)
 
 - [Elastic Beanstalk](#elastic-beanstalk)
-
+    - [Tạo application Elastic Beanstalk đơn giản](#tạo-application-elastic-beanstalk-đơn-giản)
+    - [Scale application Elastic Beanstalk single-instance lên ASG](#scale-application-elastic-beanstalk-single-instance-lên-asg)
 ## Elastic Load Balancer (ELB)
 
 
@@ -726,7 +727,7 @@ Không có thao tác đặc biệt
 
 ## Elastic Beanstalk
 <p align="center">
-    <img src = "truy_cap_service" width="800">
+    <img src = "elasticbeanstalk/eb_createeb_success.png" width="800">
 </p>
 
 
