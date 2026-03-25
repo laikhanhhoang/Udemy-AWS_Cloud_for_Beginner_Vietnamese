@@ -2,9 +2,10 @@
 
 Đây là repo cho khóa học về AWS cơ bản trên Udemy.
 
-Nội dung file **`README.md`**:
+Nội dung khóa học:
 - [**Kiến thức bổ sung**](#kiến-thức-bổ-sung)
 - [**Mục lục**](#mục-lục)
+- [**Thao tác trên AWS với từng dịch vụ**](/aws_console/README.md)
 - [**Tóm tắt nội dung từng Section**](#tóm-tắt-nội-dung-từng-section)
 
 
