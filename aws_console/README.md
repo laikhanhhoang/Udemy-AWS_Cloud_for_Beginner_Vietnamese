@@ -731,14 +731,80 @@ Không có thao tác đặc biệt
 
 
 
-### Thao tác
+### Tạo application Elastic Beanstalk đơn giản
 
 
 
 <p align="center">
-    <img src = "link_tới_ảnh" width="1000">
-
+    <img src = "elasticbeanstalk/eb_createeb_step01.png" width="1000">
 </p>
+
+<p align="center">
+    <img src = "elasticbeanstalk/eb_createeb_step02.png" width="1000">
+</p>
+
+
+<p align="center">
+    <img src = "elasticbeanstalk/eb_createeb_step03.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "elasticbeanstalk/eb_createeb_step04.png" width="1000">
+</p>
+
+
+<p align="center">
+    <img src = "elasticbeanstalk/eb_createeb_success.png" width="1000">
+</p>
+
+
+<p align="center">
+    <i>Deploy new code version</i>
+    <br>
+    <img src = "elasticbeanstalk/eb_deploy_newversion.png" width="400">
+</p>
+
+
+### Scale application Elastic Beanstalk single-instance lên ASG
+
+<p align="center">
+    <img src = "elasticbeanstalk/eb_scale_step0.png" width="1000">
+    <br>
+    <i>Vào <strong><code>Configuration</code></strong>/<strong><code>Instance traffic and scaling</code></strong>/<strong><code>Edit</code></strong> để tùy chỉnh scale</i>
+</p>
+
+<p align="center">
+    <img src = "elasticbeanstalk/eb_scale_step1_setupelb.png" width="1000">
+    <br>
+    <i>Chọn <strong><code>Load Balancer</code></strong> để scale bằng <strong>ASG</strong></i>
+</p>
+
+
+<p align="center">
+    <img src = "elasticbeanstalk/eb_scale_step1_setupelbrule.png" width="1000">
+    <br>
+    <i>Setup port hợp lí như đã làm với các Lab về ALB ở phía trên</i>
+</p>
+
+<p align="center">
+    <i>ELB connect thành công tới <strong>ASG Target Group</strong></i>
+    <br>
+    <img src = "elasticbeanstalk/eb_scale_success_elb.png" width="1000">
+</p>
+
+
+<p align="center">
+    <i><strong>ASG </strong> scale thành công lên 2 instance</i>
+    <br>
+    <img src = "elasticbeanstalk/eb_scale_success.png" width="1000">
+</p>
+
+
+
+
+
+
+
 
 <br>
 
