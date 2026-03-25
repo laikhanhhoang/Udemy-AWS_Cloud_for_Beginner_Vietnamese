@@ -67,8 +67,13 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
     - [Tạo Lambda Subscriber với Attribute Filter và gửi Message](#sns---tạo-lambda-subscriber-với-attribute-filter-và-gửi-message)
 
 - [Event Bridge](#eventbridge)
+    - [Tạo Event Bus và định nghĩa Rule](#tạo-event-bus-và-định-nghĩa-rule)
+        - [Tạo Event Bus](#tạo-event-bus)
+        - [Định nghĩa Rule và testing event](#định-nghĩa-rule-và-testing-event)
 
 ## Elastic Load Balancer (ELB)
+
+
 
 <p align="center">
     <img src = "elb/elb_new.png" width="800">
@@ -627,9 +632,6 @@ Không có thao tác đặc biệt
     <img src = "sns/sns_message_from_sns_to_lambda.png" width="1000">
     <br>
     <i>Print Event input Lambda nhận được.</i> 
-
-
-
 </p>
 
 - Ghi chú:
@@ -668,3 +670,51 @@ Không có thao tác đặc biệt
 
 
 ## **EventBridge**
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_createbuses_success.png" width="800">
+</p>
+
+### Tạo Event Bus và định nghĩa Rule
+
+#### Tạo Event Bus
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_createbuses_step0.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_createbuses_step1.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_createbuses_success.png" width="1000">
+</p>
+
+
+#### Định nghĩa Rule và testing event
+
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_buses_createrules_step01.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_buses_createrules_success.png" width="1000">
+    <br>
+    <i>Rule cần có <strong>IAM Role</strong> để gửi event đến target AWS Service</i>
+</p>
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_buses_createrules_edit.png" width="1000">
+</p>
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_buses_sendevent_testing.png" width="1000">
+    <br>
+    <i>Đây là <strong>Event mẫu</strong>, ta có thể dựa vào để <strong>tạo ra Event Pattern</strong> cho riêng event</i>
+</p>
+
+<p align="center">
+    <img src = "eventbridge/eventbridge_buses_sendevent_testing_success.png" width="1000">
+</p>
