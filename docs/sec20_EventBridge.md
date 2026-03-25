@@ -5,6 +5,9 @@
 ## MỤC LỤC
 
 - [Lí thuyết](#lí-thuyết)
+    - [Định nghĩa](#định-nghĩa): **là một dịch vụ dùng để quản lý và định tuyến sự kiện trong hệ thống hoạt động dựa trên kiến trúc publish-subscribe**.
+    - [Các thành phần của EventBridge](#các-thành-phần-của-eventbridge): Event, Rule, Event Bus, Schema, Schema registry, Pipes, Scheduler.
+    - [Usecase](#usecase): EventBus, Pipes, Scheduler.
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
@@ -23,7 +26,7 @@
     <img src = "docs_imgs\eventbridge_kethop.png" width="600">
 </p>
 
-### Các thành phần của EventBridge
+### **Các thành phần của EventBridge**
 - **Event**: Một sự kiện nào đó xảy ra trong hệ thống AWS hoặc được chủ động tạo ra.
 - **Rule**: Quy định các event và message sẽ được xử lý như thế nào nếu match rule.
 - **Event Bus**: kênh giao tiếp để nhận và gửi event.
