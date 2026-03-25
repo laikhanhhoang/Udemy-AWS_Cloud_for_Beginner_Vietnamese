@@ -74,7 +74,7 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
 - [Elastic Beanstalk](#elastic-beanstalk)
     - [Tạo application Elastic Beanstalk đơn giản](#tạo-application-elastic-beanstalk-đơn-giản)
     - [Scale application Elastic Beanstalk single-instance lên ASG](#scale-application-elastic-beanstalk-single-instance-lên-asg)
-
+    - [Blue-Green deployment với **`Swap environment domain`**](#blue-green-deployment-với-swap-environment-domain)
 ## Elastic Load Balancer (ELB)
 
 
