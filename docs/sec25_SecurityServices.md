@@ -5,6 +5,7 @@
 ## MỤC LỤC
 
 - [Lí thuyết](#lí-thuyết)
+    - [Identity and Access Management](#identity-and-access-management)
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
@@ -22,13 +23,13 @@
 
 
 ### **Identity and Access Management**
-- **AWS Identity Center**: Công cụ thay thế single-sign-on (SSO) của AWS, có nhiệm vụ **quản lý tập trung quyền access tới nhiều account & application** trên AWS.
+- **AWS Identity Center**: Công cụ thay thế single-sign-on (SSO) của AWS, có nhiệm vụ **quản lý tập trung quyền access tới nhiều account & application** trên AWS, **kết hợp AWS Organization**.
 
     <p align="center">    
         <img src = "docs_imgs\sec_iamcenter.png" width="200">
     </p>
 
-- **AWS Resource Access Manager**: Đơn giản hoá việc chia sẻ một cách bảo mật các resource giữa các AWS Account. Quản lý access đến từng resource thông qua sharing detail, cho phép chia sẻ tới IAM Role, user, AWS Account khác trong cùng Organization.
+- **AWS Resource Access Manager**: Đơn giản hoá việc chia sẻ một cách bảo mật các resource giữa các AWS Account. **Quản lý access đến *TỪNG* resource thông qua sharing detail**, cho phép chia sẻ tới IAM Role, user, AWS Account khác trong cùng Organization.
 
     <p align="center">    
         <img src = "docs_imgs\sec_resrcacessmng.png" width="200">
@@ -107,7 +108,9 @@
 
 ### **Application and infra protection**
 
-- **AWS WAF**: giúp bạn bảo vệ chống lại các bot và tình huống khai thác web phổ biến có thể ảnh hưởng đến mức độ sẵn sàng, xâm phạm bảo mật hoặc tiêu tốn quá nhiều tài nguyên.
+Nhóm này có nhiệm vụ chống lại các cuộc tấn công đến backend.
+
+- **AWS WAF**: giúp bạn bảo vệ **chống lại các bot và tình huống khai thác web phổ biến** có thể ảnh hưởng đến mức độ sẵn sàng, xâm phạm bảo mật hoặc tiêu tốn quá nhiều tài nguyên.
 
     <p align="center">    
         <img src = "docs_imgs\sec_waf.png" width="200">
@@ -119,8 +122,8 @@
 
 - **AWS Shield**: 
     - **Tối đa hóa mức độ sẵn sàng và khả năng đáp ứng của ứng dụng** với tính năng bảo vệ được quản lý **chống lại DDoS**.
-    - *Hạ tầng của AWS được bảo vệ bởi Shield  basic (by default)*
-    - *Nếu Enable Advanced Shield sẽ tốn phí ($3000/month và charge ngay lập tức) -> Lưu ý không bật shield advanced.*
+    - *Hạ tầng của AWS được bảo vệ bởi Shield  basic (by default).*
+    - *Nếu Enable Advanced Shield sẽ tốn phí (**$3000/month** và **charge ngay lập tức**) -> Lưu ý **không bật shield advanced**.*
 
 
 <br><br><br><br>
