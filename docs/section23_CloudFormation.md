@@ -5,6 +5,9 @@
 ## MỤC LỤC
 
 - [Lí thuyết](#lí-thuyết)
+    - [Định nghĩa](#định-nghĩa)
+    - [Benefit](#benefit)
+    - [CloudFormation Template](#cloudformation-template)
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
