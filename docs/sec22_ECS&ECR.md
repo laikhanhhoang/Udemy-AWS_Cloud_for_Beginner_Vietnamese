@@ -1,5 +1,5 @@
 <h1 align="center">
-    <strong>TÊN BÀI</strong>
+    <strong>CONTAINER SERVICE: ECS & ECR</strong>
 </h1>
 
 ## MỤC LỤC
@@ -54,7 +54,6 @@
 
 ## <div align="center"><strong>TÀI LIỆU BỔ SUNG</strong></div>
 
-- Nội dung phục vụ lab: [Code](/labs/sec_)
+- Nội dung phục vụ lab: [Code](/labs/sec_22)
 - AWS Console liên quan:
-    - [Dịch vụ 1](/aws_console/README.md#tên-dịch-vụ-1)
-    - [Dịch vụ 2](/aws_console/README.md#tên-dịch-vụ-2)
+    - [ECS & ECR](/aws_console/README.md#ecs--ecr)

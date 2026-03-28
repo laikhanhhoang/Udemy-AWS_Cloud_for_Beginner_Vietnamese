@@ -78,6 +78,10 @@ Truy cập nhanh đến AWS Console của service bạn muốn tìm hiểu:
     - [Blue-Green deployment với **`Swap environment domain`**](#blue-green-deployment-với-swap-environment-domain)
 
 
+- [ECS & ECR](#ecs--ecr)
+
+
+
 - [CloudFormation](#cloudformation)
 
 
@@ -831,28 +835,26 @@ Không có thao tác đặc biệt
 
 
 
+## ECS & ECR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 ## CloudFormation
 
-<p align="center">
-    <img src = "truy_cap_service" width="800">
-</p>
-
-
-
-### Thao tác
-
-
-
-<p align="center">
-    <img src = "link_tới_ảnh" width="1000">
-
-</p>
-
-
-<br>
 
 

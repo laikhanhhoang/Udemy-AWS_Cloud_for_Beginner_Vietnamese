@@ -81,7 +81,9 @@ Nội dung khóa học:
 - [Section 19 - SQS, SNS & SES](docs/sec19_SQS-SNS-SES.md) - [Console](/aws_console/README.md#sqs)
 - [Section 20 - EventBridge](/docs/sec20_EventBridge.md) - [Console](/aws_console/README.md#eventbridge)
 - [Section 21 - Elastic Beanstalk](docs/sec21_ElasticBeanstalk.md) - [Console](/aws_console/README.md#elastic-beanstalk)
+- [Section 22 - Container Service: ECS & ECR](docs/sec22_ECS&ECR.md) - [Console](/aws_console/README.md#ecs--ecr)
 - [Section 23 - CloudFormation](docs/section23_CloudFormation.md) - [Console](/aws_console/README.md#cloudformation)
+- [Section 25 - Security Services](docs/sec25_SecurityServices.md)
 
 ## Tóm tắt nội dung từng Section
 
@@ -336,3 +338,11 @@ Nội dung khóa học:
     - [Định nghĩa](docs/section23_CloudFormation.md#định-nghĩa)
     - [Benefit](docs/section23_CloudFormation.md#benefit)
     - [CloudFormation Template](docs/section23_CloudFormation.md#cloudformation-template)
+
+
+- [Section 25 - Security Services](docs/sec25_SecurityServices.md)
+    - [Identity and Access Management](docs/sec25_SecurityServices.md#identity-and-access-management)
+    - [Data Encryption And Protection](docs/sec25_SecurityServices.md#data-encryption-and-protection)
+    - [Thread Detection](docs/sec25_SecurityServices.md#thread-detection)
+    - [Application and Infra Protection](docs/sec25_SecurityServices.md#application-and-infra-protection): WAF, Shield
+    - [Management](docs/sec25_SecurityServices.md#management): Trusted Advisor, Organization
