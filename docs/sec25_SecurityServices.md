@@ -6,6 +6,10 @@
 
 - [Lí thuyết](#lí-thuyết)
     - [Identity and Access Management](#identity-and-access-management)
+    - [Data Encryption And Protection](#data-encryption-and-protection)
+    - [Thread Detection](#thread-detection)
+    - [Application and Infra Protection](#application-and-infra-protection): WAF, Shield
+    - [Management](#management): Trusted Advisor, Organization
 - [Lab](#lab)
 - [Tài liệu bổ sung](#tài-liệu-bổ-sung)
 
